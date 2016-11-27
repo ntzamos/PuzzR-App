@@ -1,0 +1,21 @@
+<ion-view view-title="Puzzles">
+    <ion-content>
+        <ion-refresher on-refresh="doRefresh()">
+
+        </ion-refresher>
+        <div class="row" ng-repeat="puzzle in puzzles" ng-if="$index % 2 === 0">
+            <div class="col 50" >
+                <a href="#/app/puzzles/{{puzzles[$index].id}}">
+                    <img ng-src="{{puzzles[$index].src}}" width="100%" />
+                </a>
+                <span>{{puzzles[$index].title}}</span>
+            </div>
+            <div class="col col-50" >
+                <a href="#/app/puzzles/{{puzzles[$index + 1].id}}">
+                    <img ng-src="{{puzzles[$index + 1].src}}" width="100%" />
+                </a>
+                <span>{{puzzles[$index + 1].title}}</span>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

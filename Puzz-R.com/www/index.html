@@ -6,32 +6,38 @@
     <title></title>
 
     <link rel="manifest" href="manifest.json">
-
-    <!-- un-comment this code to enable service worker
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(() => console.log('service worker installed'))
-          .catch(err => console.log('Error', err));
-      }
-    </script>-->
-
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
-
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic/js/angular/angular-resource.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
+    <!--App config-->
+    <script src="js/app.module.js"></script>
+    <script src="js/app.config.js"></script>
+
+    <!--Puzzle Service-->
+    <script src="js/core/puzzles/puzzles.module.js"></script>
+    <script src="js/core/puzzles/puzzles.service.js"></script>
+
+    <!--Puzzles Browse page-->
+    <script src="js/puzzlesList/puzzles-list.module.js"></script>
+    <script src="js/puzzlesList/puzzles-list.controller.js"></script>
+
+    <!--Puzzle Details page-->
+    <script src="js/puzzleDetails/puzzle-details.module.js"></script>
+    <script src="js/puzzleDetails/puzzle-details.controller.js"></script>
+
+    <!--Puzzle Categories-->
+    <script src="js/puzzleCategories/puzzle-categories.module.js"></script>
+    <script src="js/puzzleCategories/puzzle-categories.controller.js"></script>
+
     <script src="js/controllers.js"></script>
+
   </head>
 
   <body ng-app="starter">
