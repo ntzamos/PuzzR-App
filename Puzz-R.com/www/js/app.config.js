@@ -11,7 +11,7 @@ angular
             .state('app', {
                 url: '/app',
                 abstract: true,
-                templateUrl: 'js/sidebarMenu/menu.template.html',
+                templateUrl: 'js/menu/menu.template.html',
                 controller: 'AppCtrl'
             })
             .state('app.categories', {
