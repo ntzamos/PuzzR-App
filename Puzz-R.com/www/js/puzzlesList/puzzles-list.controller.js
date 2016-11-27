@@ -2,7 +2,31 @@ angular
     .module('puzzles-list')
     .controller('PuzzlesCtrl', function ($scope, $stateParams, $timeout,  PuzzleService) {
 
+        var page = 1;
+
         $scope.puzzles = [];
+        $scope.hasEnded = false;
+
+        $scope.loadMore = function() {
+
+            if (!$scope.hasEnded) {
+                page++;
+
+                PuzzleService.getPuzzles({page : page},function(puzzles) {
+                    console.log('items fetched: ' + puzzles.length);
+                    console.log(puzzles);
+
+                    if (puzzles.length > 0) {
+                        $scope.puzzles = $scope.puzzles.concat(puzzles);
+                    } else {
+                        $scope.hasEnded = true;
+                    }
+                });
+            }
+
+            $scope.$broadcast("scroll.infiniteScrollComplete");
+
+        };
 
         $scope.doRefresh = function() {
 
@@ -20,12 +44,4 @@ angular
 
         };
 
-        $scope.getData = function() {
-            PuzzleService.getPuzzles(function(puzzles) {
-                $scope.puzzles = puzzles;
-                console.log(puzzles);
-            });
-        };
-
-        $scope.getData();
     });
