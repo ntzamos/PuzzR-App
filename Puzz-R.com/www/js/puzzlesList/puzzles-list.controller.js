@@ -7,25 +7,24 @@ angular
         $scope.puzzles = [];
         $scope.hasEnded = false;
 
+
         $scope.loadMore = function() {
 
-            if (!$scope.hasEnded) {
-                page++;
+            page++;
 
-                PuzzleService.getPuzzles({page : page},function(puzzles) {
-                    console.log('items fetched: ' + puzzles.length);
-                    console.log(puzzles);
+            PuzzleService.getPuzzles({page : page},function(puzzles) {
+                console.log('items fetched: ' + puzzles.length);
+                console.log(puzzles);
 
-                    if (puzzles.length > 0) {
-                        $scope.puzzles = $scope.puzzles.concat(puzzles);
-                    } else {
-                        $scope.hasEnded = true;
-                    }
-                });
-            }
+                if (puzzles.length > 0) {
+                    $scope.puzzles = $scope.puzzles.concat(puzzles);
+                } else {
+                    console.log("TELOS");
+                    $scope.hasEnded = true;
+                }
 
-            $scope.$broadcast("scroll.infiniteScrollComplete");
-
+                $scope.$broadcast("scroll.infiniteScrollComplete");
+            });
         };
 
         $scope.doRefresh = function() {
