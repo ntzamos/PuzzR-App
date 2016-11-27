@@ -1,1 +1,6 @@
-/* Empty. Add your own CSS if you like */
+.box-img {
+    height: 150px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+}
