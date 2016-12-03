@@ -2,10 +2,11 @@ angular
     .module('puzzles-list')
     .controller('PuzzlesCtrl', function ($scope, $stateParams, $timeout,  PuzzleService) {
 
-        var page = 1;
+        var page = 0;
 
         $scope.puzzles = [];
         $scope.hasEnded = false;
+        $scope.fromRefresh = false;
 
 
         $scope.loadMore = function() {
@@ -17,9 +18,14 @@ angular
                 console.log(puzzles);
 
                 if (puzzles.length > 0) {
-                    $scope.puzzles = $scope.puzzles.concat(puzzles);
+                    if($scope.fromRefresh) {
+                        $scope.puzzles = puzzles;
+                        $scope.fromRefresh = false;
+                    }
+                    else {
+                        $scope.puzzles = $scope.puzzles.concat(puzzles);
+                    }
                 } else {
-                    console.log("TELOS");
                     $scope.hasEnded = true;
                 }
 
@@ -29,18 +35,12 @@ angular
 
         $scope.doRefresh = function() {
 
-            $timeout( function() {
-                $scope.puzzles.push(
-                    {
-                        title: "LoL 20$ Riot card",
-                        src: "http://icons.iconarchive.com/icons/sora-meliae/matrilineare/1024/avatar-default-icon.png"
-                    }
-                );
+            page = 0;
+            $scope.hasEnded = false;
+            $scope.fromRefresh = true;
 
-                $scope.$broadcast('scroll.refreshComplete');
-
-            }, 1000);
-
+            $scope.loadMore();
+            $scope.$broadcast('scroll.refreshComplete');
         };
 
     });
