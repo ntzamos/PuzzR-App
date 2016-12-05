@@ -1,0 +1,21 @@
+// App - Profile
+$profile-image-width: 30vw;
+$profile-image-border: 2px;
+$profile-pager-height: 25px;
+$profile-user-interaction-height: 40px;
+$profile-bg: $theme-color-2;
+$own-profile-bg: $theme-color-1;
+$profile-inactive: #DDD;
+$profile-color: #FFFFFF;
+$profile-user-content-bg: #FFFFFF;
+
+$profile-bar-color:#FFFFFF;
+
+$profile-user-img-ratio: 1 1;
+$pre-img-ratios: append($pre-img-ratios, $profile-user-img-ratio);
+
+// App - Settings
+$settings-bar-bg: $theme-color-1;
+$settings-bar-color: #FFFFFF;
+$settings-background-color: #EEE;
+$settings-text-color: #444;

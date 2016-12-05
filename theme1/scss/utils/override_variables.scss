@@ -1,0 +1,25 @@
+// Override Ionic variables
+// $light:                           #fff !default;
+// $stable:                          #f8f8f8 !default;
+// $positive:                        #387ef5 !default;
+$calm:                            $theme-color-1 !default;
+// $balanced:                        #83EA83 !default;
+// $balanced:                        desaturate(#83EA83, 10%) !default;
+// $balanced:                        saturate(#83EA83, 10%) !default;
+// $balanced:                        shade(darken(saturate(#83EA83, 5%), 5%), 10%) !default;
+// $balanced:                        darken(#83EA83, 10%) !default;
+$balanced:                        $theme-color-3 !default;
+// $balanced:                        #3DCD3D !default;
+$energized:                       $theme-color-4 !default;
+$assertive:                       $theme-color-2 !default;
+// $royal:                           #886aea !default;
+// $dark:                            #444 !default;
+$dark:                            lighten(#444, 45%) !default;
+
+$button-dark-bg:                  $dark !default;
+$button-dark-border:              darken($dark, 10%) !default;
+$button-dark-active-bg:           darken($dark, 5%) !default;
+$button-dark-active-border:       darken($dark, 15%) !default;
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;

@@ -1,0 +1,232 @@
+ion-nav-bar
+{
+	&.profile-color
+	{
+		*
+		{
+			color: $profile-bar-color;
+
+			.buttons button::before
+			{
+				color: $profile-bar-color;
+			}
+		}
+	}
+}
+
+.profile-view
+{
+	background-color: $profile-bg;
+	@include background-image(linear-gradient(top, $profile-bg 0%,$profile-bg 50%,$profile-user-content-bg 50%,$profile-user-content-bg 100%));
+
+	&.own-profile
+	{
+		background-color: $own-profile-bg;
+		@include background-image(linear-gradient(top, $own-profile-bg 0%,$own-profile-bg 50%,$profile-user-content-bg 50%,$profile-user-content-bg 100%));
+
+		.user-interactions
+		{
+			.split-actions
+			{
+				.button
+				{
+					&.activated,
+					&.highlighted
+					{
+						background-color: $own-profile-bg;
+						border-color: rgba(darken($own-profile-bg, 2%), .7);
+					}
+				}
+			}
+
+			.user-interaction
+			{
+				.user-interaction-tab
+				{
+					&.active
+					{
+						color: $own-profile-bg;
+					}
+				}
+			}
+		}
+	}
+
+	.profile-data
+	{
+		height: 35vh;
+		padding: 0px;
+		padding-bottom: 5px;
+
+		& > .col
+		{
+			padding: 0px;
+			height: 100%;
+		}
+	}
+
+	.profile-slides
+	{
+		height: 100%;
+
+		.slide-content
+		{
+			height: 100%;
+			padding-bottom: $profile-pager-height;
+			text-align: center;
+		}
+
+		.user-data
+		{
+			.user-image-outer
+			{
+				// If we are going to use the preload image directive, then the wrapper of the image must have width set
+				width: $profile-image-width;
+				display: inline-block;
+			}
+
+			.user-image
+			{
+				width: 100%;
+				border-radius: 50%;
+				border: $profile-image-border solid $profile-color;
+			}
+
+			.user-name
+			{
+				margin: 0px;
+  			font-size: 18px;
+				color: $profile-color;
+			}
+
+			.user-resume
+			{
+				margin: 5px 0px 0px 0px;
+  			font-size: 14px;
+				color: $profile-color;
+			}
+		}
+
+		.slider-pager
+		{
+			height: $profile-pager-height;
+			line-height: $profile-pager-height;
+			bottom: 0px;
+
+			.slider-pager-page
+			{
+				color: $profile-color;
+				font-size: 10px;
+			}
+		}
+	}
+
+	.user-interactions
+	{
+		background-color: $profile-user-content-bg;
+		border-bottom: 10px solid rgba(darken($profile-user-content-bg, 10%), .8);
+
+		.split-actions
+		{
+			padding: 0px;
+			padding-top: 5px;
+
+			.button
+			{
+				margin: 0px;
+				border-radius: 5px;
+				background-color: rgba(lighten($profile-bg, 25%), .5);
+				border-color: rgba(lighten($profile-bg, 25%), .7);
+				min-height: $profile-user-interaction-height;
+				line-height: $profile-user-interaction-height;
+				font-weight: 600;
+				color: $profile-bg;
+
+				&.activated,
+				&.highlighted
+				{
+					background-color: $profile-bg;
+					border-color: rgba(darken($profile-bg, 2%), .7);
+					color: $profile-color;
+				}
+			}
+
+			.col
+			{
+				padding-top: 0px;
+				padding-bottom: 0px;
+
+				&:first-child
+				{
+					padding-left: 0px;
+				}
+
+				&:last-child
+				{
+					padding-right: 0px;
+				}
+			}
+
+			.settings-button
+			{
+				background-color: lighten($profile-inactive, 2%);
+				border-color: lighten($profile-inactive, 2%);
+				color: darken($profile-inactive, 30%);
+			}
+		}
+
+		.user-interaction
+		{
+			margin: 5px 0px 0px 0px;
+			height: $profile-user-interaction-height;
+			line-height: $profile-user-interaction-height;
+			text-align: center;
+			font-size: 16px;
+
+			.user-interaction-tab
+			{
+				text-decoration: none;
+				color: darken($profile-inactive, 20%);
+
+				&.active
+				{
+					color: $profile-bg;
+				}
+			}
+
+			&:first-child
+			{
+				border-right: 2px solid rgba(darken($profile-user-content-bg, 10%), .8);
+				padding-right: 3px;
+			}
+		}
+	}
+
+	.profile-sub-views
+	{
+		height: initial;
+		position: relative;
+
+		.profile-posts,
+		.profile-likes
+		{
+			height: initial;
+  		bottom: initial;
+			position: relative;
+		}
+
+		.user-related-content
+		{
+			background-color: $profile-user-content-bg;
+			margin-top: 0px;
+			position: relative;
+			@include flex-wrap(wrap);
+			padding: 0px;
+		}
+
+		.user-related-content-item
+		{
+			padding: 0px;
+		}
+	}
+}

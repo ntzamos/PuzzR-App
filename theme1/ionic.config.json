@@ -1,0 +1,15 @@
+{
+  "name": "PuzzR",
+  "app_id": "",
+  "gulpStartupTasks": [
+    "default",
+    "watch",
+    "templatecache",
+    "sass"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ],
+  "documentRoot": "www"
+}

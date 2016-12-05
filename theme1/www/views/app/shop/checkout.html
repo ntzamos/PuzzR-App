@@ -1,0 +1,37 @@
+<ion-view view-title="Checkout" class="checkout-view">
+  <ion-content>
+    <div class="list">
+      <div class="item item-divider shop-section-title">
+        <span class="title-copy">Payment Method</span>
+      </div>
+      <a class="item item-icon-left add-new-card" href="#">
+        <i class="icon ion-card"></i>
+        Add new card
+      </a>
+      <div class="item item-divider shop-section-title">
+        <span class="title-copy">Totals</span>
+      </div>
+      <div class="item row padding totals">
+        <div class="col col-50">
+          <div class="row">Subtotal</div>
+          <div class="row">Tax</div>
+          <div class="row">Shipping</div>
+        </div>
+        <div class="col col-50 totals-numbers">
+          <div class="row">$135,00 USD</div>
+          <div class="row">$0,00 USD</div>
+          <div class="row">$34,95 USD</div>
+        </div>
+      </div>
+      <div class="item item-divider shop-section-title">
+        <span class="title-copy">Order Total</span>
+        <span class="order-total-value section-action">$180,95 USD</span>
+      </div>
+      <div class="row padding">
+        <button ng-class="{disabled: !paymentDetails}" class="button button-block button-energized submit-order-btn">
+          Place Order
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

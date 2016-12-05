@@ -1,0 +1,69 @@
+ion-nav-bar
+{
+	&.shipping-address-color
+	{
+		ion-header-bar
+		{
+			background-color: $shipping-address-bar-bg !important;
+			background: $shipping-address-bar-bg !important;
+			border: none !important;
+			background-size: 0px !important; // To remove bottom border on header
+		}
+
+		*
+		{
+			color: $shipping-address-bar-color;
+
+			.buttons button::before
+			{
+				color: $shipping-address-bar-color;
+			}
+		}
+	}
+}
+
+.shipping-address-view
+{
+  background-color: $shop-background-color;
+	color: $shop-text-color;
+
+  .item-floating-label
+  {
+    padding-left: 10px;
+    background-color: $shipping-address-form-bg;
+
+
+    .input-label
+    {
+      font-size: 10px;
+      color: lighten($shop-text-color, 20%);
+      padding: 0px;
+    }
+
+    input
+    {
+      @include _placeholder {
+        color: lighten($shop-text-color, 20%);
+      }
+    }
+  }
+
+  .item-toggle
+  {
+    padding-left: 10px;
+    font-size: 14px;
+    color: lighten($shop-text-color, 20%);
+    background-color: transparent;
+    border: none;
+
+    .toggle
+    {
+      padding-right: 0px;
+    }
+  }
+
+  .save-address-btn
+  {
+    font-weight: 500;
+  }
+}

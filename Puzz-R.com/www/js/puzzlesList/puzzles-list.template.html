@@ -6,13 +6,13 @@
         <div class="row" ng-repeat="puzzle in puzzles" ng-if="$index % 2 === 0">
             <div class="col col-50" >
                 <a href="#/app/puzzles/{{puzzles[$index].post_info.ID}}">
-                    <div class="box-img" ng-style="{'background-image': 'url({{puzzles[$index].post_meta['meta-image1'].meta_value}})'}"></div>
+                    <div class="box-img" ng-style="{'background-image': 'url({{puzzles[$index].post_meta['thumbnail_url']}})'}"></div>
                 </a>
                 <span>{{puzzles[$index].post_info.post_title}}</span>
             </div>
             <div class="col col-50" >
                 <a href="#/app/puzzles/{{puzzles[$index + 1].post_info.ID}}">
-                    <div class="box-img" ng-style="{'background-image': 'url({{puzzles[$index + 1].post_meta['meta-image1'].meta_value}})'}"></div>
+                    <div class="box-img" ng-style="{'background-image': 'url({{puzzles[$index + 1].post_meta['thumbnail_url']}})'}"></div>
                 </a>
                 <span>{{puzzles[$index + 1].post_info.post_title}}</span>
             </div>

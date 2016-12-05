@@ -1,0 +1,52 @@
+ion-nav-bar
+{
+	&.settings-color
+	{
+		ion-header-bar
+		{
+			background-color: $settings-bar-bg !important;
+			background: $settings-bar-bg !important;
+			border: none !important;
+			background-size: 0px !important; // To remove bottom border on header
+		}
+
+		*
+		{
+			color: $settings-bar-color;
+
+			.buttons button::before
+			{
+				color: $settings-bar-color;
+			}
+		}
+	}
+}
+
+.settings-view
+{
+  background-color: $settings-background-color;
+  color: $settings-text-color;
+
+  .item-divider.title
+  {
+    margin-top: 10px;
+    text-transform: uppercase;
+    color: lighten($settings-text-color, 20%);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 13px;
+  }
+
+  .settings-option
+  {
+    font-size: 14px;
+    color: lighten($settings-text-color, 20%);
+    padding: 12px 50px;
+  }
+
+  .icon
+  {
+    color: lighten($settings-text-color, 20%);
+    font-size: 22px;
+  }
+}

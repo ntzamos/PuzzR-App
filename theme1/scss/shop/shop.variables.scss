@@ -1,0 +1,44 @@
+// Shop - Common
+$shop-background-color: #EEE;
+$shop-bar-bg: $theme-color-3;
+$shop-bar-color: #FFFFFF;
+// $shop-highlighted-color: #1DBB1D;
+$shop-highlighted-color: darken($shop-bar-bg, 16%);
+$shop-text-color: #444;
+$buy-product-color: $theme-color-4;
+$shop-section-action-height: 24px;
+
+// Shop - Products narrow cards
+$shop-product-narrow-card-color: #222222;
+$shop-product-narrow-card-padding: 10px;
+$shop-product-narrow-card-outer-padding: 10px;
+$shop-product-img-ratio: 1 1;
+$pre-img-ratios: append($pre-img-ratios, $shop-product-img-ratio);
+
+// Shop - Home
+$shop-home-option-image-ratio: 2 1;
+$pre-img-ratios: append($pre-img-ratios, $shop-home-option-image-ratio);
+
+// Shop - Details
+$shop-details-bg: #FFFFFF;
+$shop-details-bar-color: #FFFFFF;
+
+// Shop - Cart
+$cart-bar-bg: $theme-color-4;
+$cart-bar-color: #FFFFFF;
+$cart-items-bg: #FFFFFF;
+$cart-item-img-width: 20vw;
+$cart-item-margin: 10px;
+$cart-item-select-padding: 5px;
+$cart-item-image-ratio: 1 1;
+$pre-img-ratios: append($pre-img-ratios, $cart-item-image-ratio);
+
+// Shop - Shipping Address
+$shipping-address-bar-bg: $cart-bar-bg;
+$shipping-address-bar-color: $cart-bar-color;
+$shipping-address-form-bg: $cart-items-bg;
+
+// Shop - Checkout
+$checkout-bar-bg: $cart-bar-bg;
+$checkout-bar-color: $cart-bar-color;
+$checkout-form-bg: $cart-items-bg;

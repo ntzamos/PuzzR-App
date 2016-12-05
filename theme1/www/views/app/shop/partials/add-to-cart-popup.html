@@ -1,0 +1,17 @@
+<span class="popup-product-title">{{data.product.title}}</span>
+<span class="popup-product-price">${{data.product.price}}</span>
+<div class="separator-line"></div>
+<div class="row product-options">
+  <div class="col col-75 select-option-wrapper">
+    <select ng-model="data.productOption">
+      <option value="1">Shiny Black Gold</option>
+      <option value="2">Black Ice Revo</option>
+      <option value="3">Black Silver</option>
+    </select>
+  </div>
+  <div class="col col-25 select-option-wrapper">
+    <select ng-model="data.productQuantity">
+      <option ng-repeat="i in [1,2,3,4,5,6,7,8,9,10]" value="{{i}}">{{i}}</option>
+    </select>
+  </div>
+</div>

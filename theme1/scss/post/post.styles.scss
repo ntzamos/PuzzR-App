@@ -1,0 +1,101 @@
+.post-card-outer
+{
+  .post-card
+  {
+    border-bottom: 10px solid rgba(darken($post-card-bg, 10%), .8);
+
+    .card
+    {
+      margin: 0px;
+      border-radius: 0px;
+
+      .item
+      {
+        &:first-child,
+        &:last-child
+        {
+          border-radius: 0px;
+        }
+
+        &.item-body
+        {
+          // To fix negative top avatar image
+          overflow: visible;
+          padding: $post-card-padding;
+        }
+      }
+    }
+
+    // $item-avatar-width is an ionic sass variable
+    .card-avatar-image-outer
+    {
+      width: $post-card-avatar-image-width;
+      position: absolute;
+      @include calc(top, "#{-($post-card-avatar-image-width/2)}");
+      right: $post-card-padding;
+
+      img
+      {
+        max-width: $post-card-avatar-image-width;
+        max-height: $post-card-avatar-image-width;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 2px solid $post-card-bg;
+      }
+    }
+
+    .card-title
+    {
+      margin: 0px;
+      padding-right: $post-card-avatar-image-width;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size:16px;
+      color: $post-card-color;
+    }
+
+    .card-description
+    {
+      color: lighten($post-card-color, 45%);
+      font-size: 15px;
+      font-weight: 500;
+      margin: 5px 0px 0px;
+    }
+
+    .card-user-name
+    {
+      color: $post-card-highlight-color;
+      text-decoration: none;
+    }
+
+    .card-moment-posted{
+      font-size: 12px;
+      color: lighten($post-card-color, 35%);
+    }
+  }
+
+  .post-like-action
+  {
+    position: absolute;
+    top: 16px;
+    z-index: 2;
+    right: 16px;
+    font-size: 34px;
+    color: $post-card-bg;
+    text-shadow: 0px 0 1px lighten($post-card-color, 20%);
+
+    &.clicked
+    {
+      color: $post-card-highlight-color;
+    }
+  }
+
+  .post-share
+  {
+    float: right;
+    font-size: 30px;
+    color: lighten($post-card-color, 30%);
+  }
+}

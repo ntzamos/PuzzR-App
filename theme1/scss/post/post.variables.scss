@@ -1,0 +1,14 @@
+// Post cards
+$post-card-avatar-image-width: 20vw;
+$post-card-color: #222222;
+$post-card-highlight-color: $theme-color-2;
+$post-card-bg: #FFFFFF;
+$post-card-padding: 16px;
+
+// Post cards - images ratios
+$post-card-main-image-ratio: 3 2;
+$post-card-avatar-image-ratio: 1 1;
+
+// Merge images ratios
+$pre-img-ratios: append($pre-img-ratios, $post-card-main-image-ratio);
+$pre-img-ratios: append($pre-img-ratios, $post-card-avatar-image-ratio);

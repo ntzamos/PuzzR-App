@@ -1,0 +1,66 @@
+ion-nav-bar
+{
+	&.shop-color
+	{
+		ion-header-bar
+		{
+			background-color: $shop-bar-bg !important;
+			background: $shop-bar-bg !important;
+			border: none !important;
+			background-size: 0px !important; // To remove bottom border on header
+		}
+
+		*
+		{
+			color: $shop-bar-color;
+
+			.buttons button::before
+			{
+				color: $shop-bar-color;
+			}
+		}
+	}
+}
+
+.shop-view
+{
+  background-color: $shop-background-color;
+
+  .shop-tabs
+  {
+    .tab-item.tab-item-active,
+    .tab-item.active,
+    .tab-item.activated
+    {
+      border-color: $shop-highlighted-color;
+    }
+  }
+}
+
+// Common
+.shop-section-title
+{
+	background-color: transparent;
+	border: none;
+	padding: 10px;
+	font-size: 14px;
+
+	.title-copy
+	{
+		color: lighten($shop-text-color, 5%);
+		height: $shop-section-action-height;
+		line-height: $shop-section-action-height;
+	}
+
+	.section-action
+	{
+		text-transform: uppercase;
+		font-size: 10px;
+		float: right;
+		height: $shop-section-action-height;
+		line-height: ($shop-section-action-height - 1);
+		min-height: $shop-section-action-height;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+}

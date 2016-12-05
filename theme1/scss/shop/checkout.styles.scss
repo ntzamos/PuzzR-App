@@ -1,0 +1,89 @@
+ion-nav-bar
+{
+	&.checkout-color
+	{
+		ion-header-bar
+		{
+			background-color: $checkout-bar-bg !important;
+			background: $checkout-bar-bg !important;
+			border: none !important;
+			background-size: 0px !important; // To remove bottom border on header
+		}
+
+		*
+		{
+			color: $checkout-bar-color;
+
+			.buttons button::before
+			{
+				color: $checkout-bar-color;
+			}
+		}
+	}
+}
+
+.checkout-view
+{
+  background-color: $shop-background-color;
+	color: $shop-text-color;
+
+  .add-new-card
+  {
+    color: $shop-text-color;
+    font-size: 14px;
+    font-weight: 500;
+    padding-right: 10px;
+
+    .icon
+    {
+      left: 9px;
+      color: lighten($shop-text-color, 20%);
+    }
+  }
+
+  .totals
+  {
+    font-size: 14px;
+    color: lighten($shop-text-color, 30%);
+
+    .col,
+    .row
+    {
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+
+    & > .col
+    {
+      padding: 0px;
+
+      & .row:first-child
+      {
+        padding-top: 0px;
+      }
+
+      & .row:last-child
+      {
+        padding-bottom: 0px;
+      }
+    }
+
+    .totals-numbers
+    {
+      & > .row
+      {
+        @include justify-content(flex-end);
+      }
+    }
+  }
+
+  .order-total-value
+	{
+		font-size: 14px;
+	}
+
+  .submit-order-btn
+	{
+		font-weight: 500;
+	}
+}
