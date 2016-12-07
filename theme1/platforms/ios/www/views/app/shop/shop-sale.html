@@ -1,0 +1,19 @@
+<ion-view view-title="Shop" class="shop-sale-view">
+  <ion-content>
+    <div class="row shop-products-narrow-cards-outer">
+      <div ng-repeat="product in products" class="col col-50 shop-product-narrow-card" ui-sref="app.product-detail({productId: product._id})">
+        <div class="list card">
+          <div class="item item-image">
+            <pre-img ratio="_1_1" helper-class="main-image">
+              <img ng-src="{{product.picture}}" spinner-on-load>
+            </pre-img>
+          </div>
+          <div class="item item-body">
+            <h2 class="card-title">{{product.title}}</h2>
+            <p class="card-description"><b>${{product.price}}</b> - {{product.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

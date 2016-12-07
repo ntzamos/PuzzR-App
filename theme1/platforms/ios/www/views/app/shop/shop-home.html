@@ -1,0 +1,43 @@
+<ion-view view-title="Shop" class="shop-home-view">
+  <ion-content>
+    <div class="list shop-home-options-list">
+      <a class="item shop-home-option-item" ui-sref="app.shop.sale">
+        <div class="row">
+          <div class="col">
+            <pre-img ratio="_2_1" helper-class="shop-home-option-image-outer">
+              <!-- <img ng-src="http://lorempixel.com/300/150" spinner-on-load> -->
+              <img ng-src="img/sale.png" spinner-on-load>
+            </pre-img>
+          </div>
+        </div>
+        <div class="row option-copy">
+          <div class="col col-75">
+            <span>Shop Now</span>
+          </div>
+          <div class="col col-25 option-icon">
+            <i class="icon ion-chevron-right"></i>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="item item-divider shop-section-title">
+      <span class="title-copy">Popular Now</span>
+      <a class="button button-small button-dark section-action" ui-sref="app.shop.popular">More</a>
+    </div>
+    <div class="row shop-products-narrow-cards-outer shop-product-cards-scroller">
+      <div ng-repeat="product in popular_products" class="col col-50 shop-product-narrow-card" ui-sref="app.product-detail({productId: product._id})">
+        <div class="list card">
+          <div class="item item-image">
+            <pre-img ratio="_1_1" helper-class="main-image">
+              <img ng-src="{{product.picture}}" spinner-on-load>
+            </pre-img>
+          </div>
+          <div class="item item-body">
+            <h2 class="card-title">{{product.title}}</h2>
+            <p class="card-description"><b>${{product.price}}</b> - {{product.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,71 @@
+<ion-view ng-class="{'own-profile': myProfile}" class="profile-view" cache-view="false" view-title="Profile">
+  <ion-content has-bouncing='false' class="profile-content" delegate-handle="profile-scroll">
+    <div class="row profile-data">
+      <div class="col">
+        <ion-slide-box class="profile-slides" on-slide-changed="slideHasChanged($index)">
+          <ion-slide>
+            <div class="row slide-content">
+              <div class="col col-center user-data">
+                <!-- We need a wrapper with width set for the preload image directive -->
+                <div class="user-image-outer">
+                  <pre-img ratio="_1_1" helper-class="rounded-image">
+                    <img class="user-image" ng-src="{{user.picture}}" spinner-on-load>
+                	</pre-img>
+                </div>
+                <h2 class="user-name">{{user.name}}</h2>
+                <p class="user-resume">
+                  <b>{{user.followers}}</b> Followers &nbsp;&nbsp;<b>{{user.following}}</b> Following
+                </p>
+              </div>
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="row slide-content">
+              <div class="col col-center user-data">
+                <p class="user-resume">
+                  {{user.about}}
+                </p>
+              </div>
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+      </div>
+    </div>
+    <div class="row user-interactions">
+      <div class="col">
+        <div class="row split-actions" ng-if="!myProfile">
+          <div class="col">
+            <button class="button button-block highlighted">
+              Following
+            </button>
+          </div>
+          <div class="col">
+            <button class="button button-block">
+              Message
+            </button>
+          </div>
+        </div>
+        <div class="row split-actions" ng-if="myProfile">
+          <div class="col">
+            <button class="button button-block icon-left ion-gear-a settings-button" ui-sref="app.settings">
+              Settings
+            </button>
+          </div>
+        </div>
+        <div class="row split-actions">
+          <div class="col user-interaction">
+            <p>
+              <a class="user-interaction-tab" ng-class="{active: ('app.profile.posts' | includedByState)}" nav-transition="none" ng-click="getUserPosts(user._id)" role="tab"><b>{{user.followers}}</b> Posts</a>
+            </p>
+          </div>
+          <div class="col user-interaction">
+            <p>
+              <a class="user-interaction-tab" ng-class="{active: ('app.profile.likes' | includedByState)}" nav-transition="none" ng-click="getUserLikes( user._id)" role="tab"><b>{{user.following}}</b> Likes</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ion-nav-view class="profile-sub-views" name="profileContent"></ion-nav-view>
+  </ion-content>
+</ion-view>
