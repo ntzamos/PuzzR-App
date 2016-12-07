@@ -1,6 +1,5 @@
-# Find and Replace ionTheme_1 with your own value
-# To generate the data we use this tool: http://www.json-generator.com/
+# App development with Ionic framework for https://Puzz-R.com
 
-Original color palette: http://paletton.com/#uid=7000u0kiCFn8GVde7NVmtwSqXtg
+ionic serve android
 
-# You can find the documentation here: http://bit.ly/ionicthemes-theme1
+ionic run android
