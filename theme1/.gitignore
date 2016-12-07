@@ -3,7 +3,6 @@
 
 node_modules/
 platforms/
-plugins/
 showcase/
 UPLOAD/
 RELEASE/
@@ -11,10 +10,5 @@ APK/
 tmp/
 
 
-www/lib/
-www/fonts/
-www/img/orig
-www/js/views.js
-www/js/tracking-config.js
 
 .DS_Store
