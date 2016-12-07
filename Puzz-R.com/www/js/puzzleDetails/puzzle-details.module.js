@@ -1,4 +1,0 @@
-angular
-    .module('puzzle-details', [
-
-    ]);

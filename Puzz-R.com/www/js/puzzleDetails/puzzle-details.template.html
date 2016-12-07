@@ -1,9 +1,0 @@
-<ion-view view-title="Puzzle">
-    <ion-content>
-        <h3>{{puzzle.post_info.post_title}}</h3>
-        Puzzle id: {{id}}<br/>
-        <img width="100%" ng-src="{{puzzle.post_meta['meta-image1'].meta_value}}" />
-        <div class="box-img" ng-style="{'background-image': 'url({{puzzle.post_meta['meta-image1'].meta_value}})'}"></div>
-        <button class="btn btn-primary" ng-click="playPuzzle()">Play Now!</button>
-    </ion-content>
-</ion-view>
