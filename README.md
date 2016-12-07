@@ -1,5 +1,6 @@
-# App development with Ionic framework for https://Puzz-R.com
+# App development with Ionic framework
+# for https://Puzz-R.com
 
-ionic serve android
+# ionic serve android
 
-ionic run android
+# ionic run android
