@@ -1,5 +1,6 @@
-<ion-view view-title="Shop" class="shop-home-view">
+<ion-view view-title="Puzz-R" class="shop-home-view">
   <ion-content>
+      <ion-refresher on-refresh="doRefresh()"></ion-refresher>
     <div class="list shop-home-options-list">
       <a class="item shop-home-option-item" ui-sref="app.shop.sale">
         <div class="row">
@@ -12,7 +13,7 @@
         </div>
         <div class="row option-copy">
           <div class="col col-75">
-            <span>Shop Now</span>
+            <span>Play Now</span>
           </div>
           <div class="col col-25 option-icon">
             <i class="icon ion-chevron-right"></i>
@@ -21,23 +22,31 @@
       </a>
     </div>
     <div class="item item-divider shop-section-title">
-      <span class="title-copy">Popular Now</span>
-      <a class="button button-small button-dark section-action" ui-sref="app.shop.popular">More</a>
+      <span class="title-copy">Hot Items</span>
+      <a class="button button-small button-dark section-action" ui-sref="app.shop.sale">More</a>
     </div>
-    <div class="row shop-products-narrow-cards-outer shop-product-cards-scroller">
-      <div ng-repeat="product in popular_products" class="col col-50 shop-product-narrow-card" ui-sref="app.product-detail({productId: product._id})">
+    <div class="row shop-products-narrow-cards-outer ">
+      <div ng-repeat="product in products" class="col col-50 shop-product-narrow-card" ui-sref="app.product-detail({productId: product.post_info.ID})">
+
+    <!-- <div class="row shop-products-narrow-cards-outer shop-product-cards-scroller">
+      <div ng-repeat="product in products" class="col col-50 shop-product-narrow-card" ui-sref="app.product-detail({productId: product._id})"> -->
         <div class="list card">
           <div class="item item-image">
             <pre-img ratio="_1_1" helper-class="main-image">
-              <img ng-src="{{product.picture}}" spinner-on-load>
+              <img ng-src="{{product.post_meta['thumbnail_url']}}" spinner-on-load>
             </pre-img>
           </div>
           <div class="item item-body">
-            <h2 class="card-title">{{product.title}}</h2>
-            <p class="card-description"><b>${{product.price}}</b> - {{product.description}}</p>
+            <h2 class="card-title">{{product.post_info.post_title}}</h2>
+            <p class="card-description"><b>${{product.post_meta['meta-price'].meta_value}}</b> -
+               {{product.post_info.post_content | limitTo : 20}}
+             </p>
           </div>
         </div>
       </div>
     </div>
+
+    <ion-infinite-scroll ng-if="!hasEnded" on-infinite="loadMore()" distance="2%"></ion-infinite-scroll>
+
   </ion-content>
 </ion-view>

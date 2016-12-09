@@ -1,4 +1,4 @@
-angular.module('PuzzR.app.controllers', [])
+angular.module('PuzzR.app.controllers', ['PuzzR.app.services'])
 
 
 .controller('AppCtrl', function($scope, AuthService) {
@@ -109,7 +109,7 @@ angular.module('PuzzR.app.controllers', [])
 
 .controller('FeedCtrl', function($scope, PostService) {
   $scope.posts = [];
-  $scope.page = 1;
+  $scope.page = 0;
   $scope.totalPages = 1;
 
   $scope.doRefresh = function() {
@@ -128,6 +128,7 @@ angular.module('PuzzR.app.controllers', [])
   };
 
   $scope.loadMoreData = function(){
+      console.log('fortwnw');
     $scope.page += 1;
 
     PostService.getFeed($scope.page)
@@ -141,7 +142,8 @@ angular.module('PuzzR.app.controllers', [])
   };
 
   $scope.moreDataCanBeLoaded = function(){
-    return $scope.totalPages > $scope.page;
+    // return $scope.totalPages > $scope.page;
+      return true;
   };
 
   $scope.doRefresh();
@@ -149,19 +151,102 @@ angular.module('PuzzR.app.controllers', [])
 })
 
 
-.controller('ShopCtrl', function($scope, ShopService) {
-  $scope.products = [];
-  $scope.popular_products = [];
+.controller('CategoriesPuzzleCtrl', function($scope, $stateParams, ShopService, PuzzleService) {
+    var page = 0;
+    var catId = $stateParams.categoryId;
+    var name = $stateParams.name;
 
-  ShopService.getProducts().then(function(products){
-    $scope.products = products;
-  });
+    $scope.name = name;
+    $scope.puzzles = [];
+    $scope.fromRefresh = false;
+    $scope.hasEnded = false;
+    $scope.hasData = true;
+
+    console.log('Category Id: ' + catId);
+    console.log('Name: ' + name);
+
+    $scope.loadPuzzlesByCat = function() {
+        page++;
+
+        console.log('Fetching puzzles By Category..');
+        PuzzleService.getPuzzlesByCategory({categoryId: catId, page: page}, function(puzzles) {
+            console.log('items fetched: ' + puzzles.length);
+            console.log(puzzles);
 
 
 
-  ShopService.getProducts().then(function(products){
-    $scope.popular_products = products.slice(0, 2);
-  });
+            if (puzzles.length > 0) {
+                if($scope.fromRefresh) {
+                    $scope.puzzles = puzzles;
+                    $scope.fromRefresh = false;
+                }
+                else {
+                    $scope.puzzles = $scope.puzzles.concat(puzzles);
+                }
+            } else if (puzzles.length == 0) {
+                if (page == 1) {
+                    $scope.hasData = false;
+                }
+                $scope.hasEnded = true;
+            }
+
+            $scope.$broadcast("scroll.infiniteScrollComplete");
+        });
+    };
+
+    $scope.doRefresh = function() {
+
+        page = 0;
+        $scope.hasEnded = false;
+        $scope.fromRefresh = true;
+
+        $scope.loadPuzzlesByCat();
+        $scope.$broadcast('scroll.refreshComplete');
+    };
+})
+
+.controller('ShopCtrl', function($scope, ShopService, PuzzleService) {
+    var page = 0;
+
+    $scope.puzzles = [];
+    $scope.hasEnded = false;
+    $scope.fromRefresh = false;
+    $scope.products = [];
+    $scope.popular_products = [];
+
+    $scope.loadMore = function() {
+        page++;
+        console.log('Fetching more puzzles..');
+        PuzzleService.getPuzzles({page : page},function(puzzles) {
+            console.log('items fetched: ' + puzzles.length);
+            console.log(puzzles);
+
+            if (puzzles.length > 0) {
+                if($scope.fromRefresh) {
+                    $scope.products = puzzles;
+                    $scope.fromRefresh = false;
+                }
+                else {
+                    $scope.products = $scope.products.concat(puzzles);
+                }
+            } else {
+                $scope.hasEnded = true;
+            }
+
+            $scope.$broadcast("scroll.infiniteScrollComplete");
+        });
+    };
+
+    $scope.doRefresh = function() {
+
+        page = 0;
+        $scope.hasEnded = false;
+        $scope.fromRefresh = true;
+
+        $scope.loadMore();
+        $scope.$broadcast('scroll.refreshComplete');
+    };
+
 })
 
 
@@ -188,6 +273,22 @@ angular.module('PuzzR.app.controllers', [])
   };
 
 })
+
+.controller('CategoriesCtrl', function($scope, PuzzleService) {
+    $scope.categories = [];
+
+    $scope.loadCategories = function () {
+        console.log('Fetching puzzle categories..');
+
+        PuzzleService.query(function(categories) {
+            $scope.categories = categories;
+            console.log(categories)
+        });
+    };
+
+    $scope.loadCategories();
+})
+
 
 
 .controller('CheckoutCtrl', function($scope) {

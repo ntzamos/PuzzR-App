@@ -1,5 +1,6 @@
 <ion-view view-title="Puzz-R" class="shop-home-view">
   <ion-content>
+      <ion-refresher on-refresh="doRefresh()"></ion-refresher>
     <div class="list shop-home-options-list">
       <a class="item shop-home-option-item" ui-sref="app.shop.sale">
         <div class="row">
@@ -44,5 +45,8 @@
         </div>
       </div>
     </div>
+
+    <ion-infinite-scroll ng-if="!hasEnded" on-infinite="loadMore()" distance="2%"></ion-infinite-scroll>
+
   </ion-content>
 </ion-view>

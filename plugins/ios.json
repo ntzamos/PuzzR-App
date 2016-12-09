@@ -30,6 +30,9 @@
         },
         "cordova-plugin-transport-security": {
             "PACKAGE_NAME": "com.thepuzzcompany.app"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.thepuzzcompany.app"
         }
     },
     "dependent_plugins": {}
