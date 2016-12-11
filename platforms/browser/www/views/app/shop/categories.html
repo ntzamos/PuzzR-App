@@ -1,0 +1,9 @@
+<ion-view view-title="Categories" class="shop-popular-view">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="category in categories" ui-sref="app.categories-puzzle({categoryId: category.id, name: category.cat_title})">
+                {{category.cat_title}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

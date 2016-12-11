@@ -24,7 +24,7 @@ angular.module('PuzzR', [
   }
 })
 
-.run(function($ionicPlatform, $rootScope, $ionicHistory) {
+.run(function($ionicPlatform, $rootScope, $ionicHistory, $ionicPopup) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -34,6 +34,21 @@ angular.module('PuzzR', [
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+      $ionicPlatform.ready(function() {
+          if(window.Connection) {
+              if(navigator.connection.type == Connection.NONE) {
+                  $ionicPopup.confirm({
+                      title: "Internet Disconnected",
+                      content: "The internet is disconnected on your device."
+                  })
+                      .then(function(result) {
+                          if(!result) {ionic.Platform.exitApp();
+                              ionic.Platform.exitApp();
+                          }
+                      });
+              }
+          }
+      });
   });
 })
 
@@ -147,6 +162,16 @@ angular.module('PuzzR', [
     }
   })
 
+  .state('app.categories', {
+      url: "/categories",
+      views: {
+          'menuContent': {
+              templateUrl: "views/app/shop/categories.html",
+              controller: 'CategoriesCtrl'
+          }
+      }
+  })
+
   .state('app.shipping-address', {
     url: "/shipping-address",
     views: {
@@ -177,6 +202,16 @@ angular.module('PuzzR', [
     }
   })
 
+  .state('app.categories-puzzle', {
+      url: "/categories/:categoryId",
+      params: {name: null},
+      views: {
+          'menuContent': {
+              templateUrl: "views/app/shop/categories-puzzle.html",
+              controller: 'CategoriesPuzzleCtrl'
+          }
+      }
+  })
 
   //AUTH ROUTES
   .state('facebook-sign-in', {

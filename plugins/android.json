@@ -33,6 +33,9 @@
         },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.thepuzzcompany.app"
+        },
+        "cordova-plugin-googleplus": {
+            "PACKAGE_NAME": "com.thepuzzcompany.app"
         }
     },
     "dependent_plugins": {}

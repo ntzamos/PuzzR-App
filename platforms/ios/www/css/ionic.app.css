@@ -9704,9 +9704,12 @@ ion-nav-bar.feed-color ion-header-bar {
   background-size: 0px !important; }
 
 ion-nav-bar.feed-color * {
-  color: #FFFFFF; }
-  ion-nav-bar.feed-color * .buttons button::before {
-    color: #FFFFFF; }
+  color: #FFFFFF;
+}
+ion-nav-bar.feed-color * .buttons button::before {
+  color: #FFFFFF;
+}
+
 
 .feed-view {
   background-color: #3ba1da; }
@@ -10168,3 +10171,29 @@ ion-nav-bar.checkout-color * {
     font-size: 14px; }
   .checkout-view .submit-order-btn {
     font-weight: 500; }
+
+
+ion-nav-bar.categories-color ion-header-bar {
+    background-color: #FF9D4C !important;
+    background: #FF9D4C !important;
+    border: none !important;
+    background-size: 0px !important; }
+
+ion-nav-bar.categories-color * {
+    color: #FFFFFF;
+}
+ion-nav-bar.categories-color * .buttons button::before {
+    color: #FFFFFF;
+}
+
+
+ion-nav-bar.categories-puzzle-color ion-header-bar {
+    background-color: #FF9D4C !important;
+    background: #FF9D4C !important;
+    border: none !important;
+    background-size: 0px !important; }
+
+ion-nav-bar.categories-puzzle-color * {
+    color: #FFFFFF; }
+ion-nav-bar.categories-puzzle-color * .buttons button::before {
+    color: #FFFFFF; }

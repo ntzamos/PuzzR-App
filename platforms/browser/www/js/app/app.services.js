@@ -161,6 +161,11 @@ function PuzzleService($resource) {
         getPuzzleById: {
             url: 'http://api.puzz-r.com/puzzle/:puzzleId',
             method: 'GET'
+        },
+        getPuzzlesByCategory: {
+            url: 'http://api.puzz-r.com/puzzles/category/:categoryId/:page',
+            method: 'GET',
+            isArray: true
         }
     });
 }

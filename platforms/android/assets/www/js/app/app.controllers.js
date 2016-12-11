@@ -1,4 +1,6 @@
-angular.module('PuzzR.app.controllers', ['PuzzR.app.services'])
+angular.module('PuzzR.app.controllers', [
+    'PuzzR.app.services'
+])
 
 
 .controller('AppCtrl', function($scope, AuthService) {
