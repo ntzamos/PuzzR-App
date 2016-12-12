@@ -69,4 +69,8 @@
     <plugin name="cordova-plugin-console" spec="~1.0.4" />
     <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
     <plugin name="cordova-plugin-splashscreen" spec="~3.0.0" />
+    <plugin name="cordova-plugin-facebook4" spec="~1.7.4">
+        <variable name="APP_ID" value="565485373626941" />
+        <variable name="APP_NAME" value="Puzz-R.com" />
+    </plugin>
 </widget>

@@ -64,48 +64,73 @@ angular.module('PuzzR.app.controllers', [
 
 })
 
+// 
+// .controller('ProductCtrl', function($scope, $stateParams, ShopService, $ionicPopup, $ionicLoading) {
+//   var productId = $stateParams.productId;
+//
+//
+//
+//   ShopService.getProduct(productId).then(function(product){
+//     $scope.product = product;
+//   });
+//
+//   // show add to cart popup on button click
+//   $scope.showAddToCartPopup = function(product) {
+//     $scope.data = {};
+//     $scope.data.product = product;
+//     $scope.data.productOption = 1;
+//     $scope.data.productQuantity = 1;
+//
+//     var myPopup = $ionicPopup.show({
+//       cssClass: 'add-to-cart-popup',
+//       templateUrl: 'views/app/shop/partials/add-to-cart-popup.html',
+//       title: 'Add to Cart',
+//       scope: $scope,
+//       buttons: [
+//         { text: '', type: 'close-popup ion-ios-close-outline' },
+//         {
+//           text: 'Add to cart',
+//           onTap: function(e) {
+//             return $scope.data;
+//           }
+//         }
+//       ]
+//     });
+//     myPopup.then(function(res) {
+//       if(res)
+//       {
+//         $ionicLoading.show({ template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Adding to cart</p>', duration: 1000 });
+//         ShopService.addProductToCart(res.product);
+//         console.log('Item added to cart!', res);
+//       }
+//       else {
+//         console.log('Popup closed');
+//       }
+//     });
+//   };
+// })
 
 .controller('ProductCtrl', function($scope, $stateParams, ShopService, $ionicPopup, $ionicLoading) {
+
   var productId = $stateParams.productId;
 
   ShopService.getProduct(productId).then(function(product){
     $scope.product = product;
+
+    console.log(product.post_meta['thumbnail_url']);
+    //imagePuzzle.startGame(product.post_meta['meta-image1'].meta_value, product.post_meta['meta-difficulty'].meta_value);
+
+
+    $('.puzzle-component').puzzle({src:product.post_meta['meta-image1'].meta_value, size:product.post_meta['meta-difficulty'].meta_value, callback: checkWin});
+
+    function checkWin(rivals, dif, moves, time) {
+      console.log(moves + " " + time);
+
+    }
+
+
   });
 
-  // show add to cart popup on button click
-  $scope.showAddToCartPopup = function(product) {
-    $scope.data = {};
-    $scope.data.product = product;
-    $scope.data.productOption = 1;
-    $scope.data.productQuantity = 1;
-
-    var myPopup = $ionicPopup.show({
-      cssClass: 'add-to-cart-popup',
-      templateUrl: 'views/app/shop/partials/add-to-cart-popup.html',
-      title: 'Add to Cart',
-      scope: $scope,
-      buttons: [
-        { text: '', type: 'close-popup ion-ios-close-outline' },
-        {
-          text: 'Add to cart',
-          onTap: function(e) {
-            return $scope.data;
-          }
-        }
-      ]
-    });
-    myPopup.then(function(res) {
-      if(res)
-      {
-        $ionicLoading.show({ template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Adding to cart</p>', duration: 1000 });
-        ShopService.addProductToCart(res.product);
-        console.log('Item added to cart!', res);
-      }
-      else {
-        console.log('Popup closed');
-      }
-    });
-  };
 })
 
 

@@ -81,5 +81,16 @@
         "variables": {
             "REVERSED_CLIENT_ID": "675813043375-n37u36c1hdb3o16ss8l5u048u9asi9f9.apps.googleusercontent.com"
         }
+    },
+    "cordova-plugin-facebook4": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-facebook4"
+        },
+        "is_top_level": true,
+        "variables": {
+            "APP_ID": "565485373626941",
+            "APP_NAME": "Puzz-R.com"
+        }
     }
 }

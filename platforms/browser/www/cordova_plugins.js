@@ -97,6 +97,14 @@ module.exports = [
         "clobbers": [
             "window.plugins.googleplus"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-facebook4/www/facebook-browser.js",
+        "id": "cordova-plugin-facebook4.FacebookConnectPluginBrowser",
+        "pluginId": "cordova-plugin-facebook4",
+        "clobbers": [
+            "facebookConnectPlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -111,7 +119,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.3.0",
     "ionic-plugin-keyboard": "2.2.1",
     "cordova-plugin-network-information": "1.3.1-dev",
-    "cordova-plugin-googleplus": "5.1.1"
+    "cordova-plugin-googleplus": "5.1.1",
+    "cordova-plugin-facebook4": "1.7.4"
 }
 // BOTTOM OF METADATA
 });

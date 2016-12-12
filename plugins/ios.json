@@ -37,6 +37,11 @@
         "cordova-plugin-googleplus": {
             "REVERSED_CLIENT_ID": "675813043375-n37u36c1hdb3o16ss8l5u048u9asi9f9.apps.googleusercontent.com",
             "PACKAGE_NAME": "com.thepuzzcompany.app"
+        },
+        "cordova-plugin-facebook4": {
+            "APP_ID": "565485373626941",
+            "APP_NAME": "Puzz-R.com",
+            "PACKAGE_NAME": "com.thepuzzcompany.app"
         }
     },
     "dependent_plugins": {}

@@ -52,6 +52,22 @@
       <dict>
         <key>accounts.google.com</key>
         <dict/>
+        <key>m.facebook.com</key>
+        <dict/>
+        <key>graph.facebook.com</key>
+        <dict/>
+        <key>api.facebook.com</key>
+        <dict/>
+        <key>fbcdn.net</key>
+        <dict>
+          <key>NSIncludesSubdomains</key>
+          <true/>
+        </dict>
+        <key>akamaihd.net</key>
+        <dict>
+          <key>NSIncludesSubdomains</key>
+          <true/>
+        </dict>
       </dict>
     </dict>
     <key>UIInterfaceOrientation</key>
@@ -70,6 +86,23 @@
           <string>675813043375-n37u36c1hdb3o16ss8l5u048u9asi9f9.apps.googleusercontent.com</string>
         </array>
       </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb565485373626941</string>
+        </array>
+      </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>565485373626941</string>
+    <key>FacebookDisplayName</key>
+    <string>Puzz-R.com</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>fbapi</string>
+      <string>fb-messenger-api</string>
+      <string>fbauth2</string>
+      <string>fbshareextension</string>
     </array>
   </dict>
 </plist>

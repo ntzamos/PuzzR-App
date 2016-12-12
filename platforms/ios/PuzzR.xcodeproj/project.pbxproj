@@ -43,6 +43,11 @@
 		3226FC05C04040E69AE34616 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C82EC877F21343FA94687D8B /* libz.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6758CF4598214C91AD011B77 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6B970B77954C91983EFF9C /* libz.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F595C6FF2FCC4B14A22C1C2E /* PuzzR.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = C74CD8ECE7CD40799FB4D492 /* PuzzR.entitlements */; };
+		72DACDD2BC6746CD9C2D1DF6 /* FacebookConnectPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEF8D8C6E1D4A4CB7029BB4 /* FacebookConnectPlugin.m */; };
+		EAC018757BA84B6B98FF16F4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3651C4EA2EB441BAAB2B71C8 /* Bolts.framework */; };
+		C7B451741A3D4273898ABC58 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 980971E472574B9B82D40967 /* FBSDKCoreKit.framework */; };
+		0B8C9559DD5F4F97AEE97A0D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F73DF150E0A42F5B2DE3458 /* FBSDKLoginKit.framework */; };
+		B6E88943F4C34D8791CF52AC /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6549FECDEB2C4F328ECE8DA7 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +125,12 @@
 		C82EC877F21343FA94687D8B /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
 		2B6B970B77954C91983EFF9C /* libz.dylib */ = {isa = PBXFileReference; name = "libz.dylib"; path = "usr/lib/libz.dylib"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = compiled.mach-o.dylib; explicitFileType = undefined; includeInIndex = 0; };
 		C74CD8ECE7CD40799FB4D492 /* PuzzR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = "PuzzR.entitlements"; path = "PuzzR.entitlements"; sourceTree = "<group>"; fileEncoding = 4; };
+		9BEF8D8C6E1D4A4CB7029BB4 /* FacebookConnectPlugin.m */ = {isa = PBXFileReference; name = "FacebookConnectPlugin.m"; path = "cordova-plugin-facebook4/FacebookConnectPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		D0767A52F9604396A60BF256 /* FacebookConnectPlugin.h */ = {isa = PBXFileReference; name = "FacebookConnectPlugin.h"; path = "cordova-plugin-facebook4/FacebookConnectPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		3651C4EA2EB441BAAB2B71C8 /* Bolts.framework */ = {isa = PBXFileReference; name = "Bolts.framework"; path = "PuzzR/Plugins/cordova-plugin-facebook4/Bolts.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		980971E472574B9B82D40967 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; name = "FBSDKCoreKit.framework"; path = "PuzzR/Plugins/cordova-plugin-facebook4/FBSDKCoreKit.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		0F73DF150E0A42F5B2DE3458 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; name = "FBSDKLoginKit.framework"; path = "PuzzR/Plugins/cordova-plugin-facebook4/FBSDKLoginKit.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		6549FECDEB2C4F328ECE8DA7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; name = "FBSDKShareKit.framework"; path = "PuzzR/Plugins/cordova-plugin-facebook4/FBSDKShareKit.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +154,10 @@
 				29F8FCDD0D4D4F15988631F8 /* Security.framework in Frameworks */,
 				3226FC05C04040E69AE34616 /* libz.tbd in Frameworks */,
 				6758CF4598214C91AD011B77 /* libz.dylib in Frameworks */,
+				EAC018757BA84B6B98FF16F4 /* Bolts.framework in Frameworks */,
+				C7B451741A3D4273898ABC58 /* FBSDKCoreKit.framework in Frameworks */,
+				0B8C9559DD5F4F97AEE97A0D /* FBSDKLoginKit.framework in Frameworks */,
+				B6E88943F4C34D8791CF52AC /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +245,10 @@
 				0395999420CB4D27A78072DA /* Security.framework */,
 				C82EC877F21343FA94687D8B /* libz.tbd */,
 				2B6B970B77954C91983EFF9C /* libz.dylib */,
+				3651C4EA2EB441BAAB2B71C8 /* Bolts.framework */,
+				980971E472574B9B82D40967 /* FBSDKCoreKit.framework */,
+				0F73DF150E0A42F5B2DE3458 /* FBSDKLoginKit.framework */,
+				6549FECDEB2C4F328ECE8DA7 /* FBSDKShareKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -275,6 +294,8 @@
 				5EBDF4F8D8FB4AF6A07909BE /* CDVReachability.h */,
 				5B2F8DADA09C43DEBA44ECB2 /* GooglePlus.m */,
 				59428B4DDE6045E6ADB6C5DD /* GooglePlus.h */,
+				9BEF8D8C6E1D4A4CB7029BB4 /* FacebookConnectPlugin.m */,
+				D0767A52F9604396A60BF256 /* FacebookConnectPlugin.h */,
 			);
 			name = Plugins;
 			path = "PuzzR/Plugins";
@@ -399,6 +420,7 @@
 				18F6F189CED04590A9C606E3 /* CDVConnection.m in Sources */,
 				331E6BACAC994C2C8D603120 /* CDVReachability.m in Sources */,
 				184442B6AF504A208B8D8B2B /* GooglePlus.m in Sources */,
+				72DACDD2BC6746CD9C2D1DF6 /* FacebookConnectPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +464,10 @@
 					"\"PuzzR/Plugins/cordova-plugin-googleplus\"",
 					"\"PuzzR/Plugins/cordova-plugin-googleplus\"",
 					"\"PuzzR/Plugins/cordova-plugin-googleplus\"",
+					"\"PuzzR/Plugins/cordova-plugin-facebook4\"",
+					"\"PuzzR/Plugins/cordova-plugin-facebook4\"",
+					"\"PuzzR/Plugins/cordova-plugin-facebook4\"",
+					"\"PuzzR/Plugins/cordova-plugin-facebook4\"",
 				);
 				CODE_SIGN_ENTITLEMENTS = "PuzzR/Resources/PuzzR.entitlements";
 			};
@@ -474,6 +500,10 @@
 					"\"PuzzR/Plugins/cordova-plugin-googleplus\"",
 					"\"PuzzR/Plugins/cordova-plugin-googleplus\"",
 					"\"PuzzR/Plugins/cordova-plugin-googleplus\"",
+					"\"PuzzR/Plugins/cordova-plugin-facebook4\"",
+					"\"PuzzR/Plugins/cordova-plugin-facebook4\"",
+					"\"PuzzR/Plugins/cordova-plugin-facebook4\"",
+					"\"PuzzR/Plugins/cordova-plugin-facebook4\"",
 				);
 				CODE_SIGN_ENTITLEMENTS = "PuzzR/Resources/PuzzR.entitlements";
 			};

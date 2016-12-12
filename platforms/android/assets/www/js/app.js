@@ -201,6 +201,15 @@ angular.module('PuzzR', [
       }
     }
   })
+    .state('app.play-game', {
+      url: "/play/:productId",
+      views: {
+        'menuContent': {
+          templateUrl: "views/app/shop/play-game.html",
+          controller: 'GameCtrl'
+        }
+      }
+    })
 
   .state('app.categories-puzzle', {
       url: "/categories/:categoryId",

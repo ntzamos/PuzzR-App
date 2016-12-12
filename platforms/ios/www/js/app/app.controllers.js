@@ -1,4 +1,6 @@
-angular.module('PuzzR.app.controllers', ['PuzzR.app.services'])
+angular.module('PuzzR.app.controllers', [
+    'PuzzR.app.services'
+])
 
 
 .controller('AppCtrl', function($scope, AuthService) {
@@ -66,6 +68,8 @@ angular.module('PuzzR.app.controllers', ['PuzzR.app.services'])
 .controller('ProductCtrl', function($scope, $stateParams, ShopService, $ionicPopup, $ionicLoading) {
   var productId = $stateParams.productId;
 
+
+
   ShopService.getProduct(productId).then(function(product){
     $scope.product = product;
   });
@@ -104,6 +108,42 @@ angular.module('PuzzR.app.controllers', ['PuzzR.app.services'])
       }
     });
   };
+})
+
+.controller('GameCtrl', function($scope, $stateParams, ShopService, $ionicPopup, $ionicLoading) {
+  var productId = $stateParams.productId;
+
+  function touchHandler(event) {
+      var touch = event.changedTouches[0];
+
+      var simulatedEvent = document.createEvent("MouseEvent");
+          simulatedEvent.initMouseEvent({
+          touchstart: "mousedown",
+          touchmove: "mousemove",
+          touchend: "mouseup"
+      }[event.type], true, true, window, 1,
+          touch.screenX, touch.screenY,
+          touch.clientX, touch.clientY, false,
+          false, false, false, 0, null);
+
+      touch.target.dispatchEvent(simulatedEvent);
+      event.preventDefault();
+  }
+
+  function init() {
+      document.addEventListener("touchstart", touchHandler, true);
+      document.addEventListener("touchmove", touchHandler, true);
+      document.addEventListener("touchend", touchHandler, true);
+      document.addEventListener("touchcancel", touchHandler, true);
+  }
+
+  ShopService.getProduct(productId).then(function(product){
+    $scope.product = product;
+    console.log(product.post_meta['thumbnail_url']);
+    imagePuzzle.startGame(product.post_meta['thumbnail_url'], 4);
+  });
+
+  init();
 })
 
 

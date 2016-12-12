@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "675813043375",
+    "project_id": "puzzr-152117"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:675813043375:android:3b94e2d8026ffcf8",
+        "android_client_info": {
+          "package_name": "com.thepuzzcompany.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "675813043375-n37u36c1hdb3o16ss8l5u048u9asi9f9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thepuzzcompany.app",
+            "certificate_hash": "69DCCF573BD17B90220B745AD1351635BF6ED522"
+          }
+        },
+        {
+          "client_id": "675813043375-bc20qo4hhlaeemi7212ukvvhs6o8a8mq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3WGokVDP4-8Hp5yNpP2Ycz0A5DixIhvs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

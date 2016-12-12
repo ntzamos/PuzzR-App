@@ -45,7 +45,7 @@ angular.module('PuzzR.auth.controllers', [
             function (user_data) {
                 // For the purpose of this example I will store user data on local storage
                 console.log(user_data);
-                alert('ID: ' + user_data.id + ', Name: ' + user_data.displayName + ', mail: ' + user_data.email
+                alert('ID: ' + user_data.userId + ', Name: ' + user_data.displayName + ', mail: ' + user_data.email
                     + ', idToken: ' + user_data.idToken + ', accessToken: ' + user_data.accessToken);
                 UserService.setUser({
                     userID: user_data.userId,

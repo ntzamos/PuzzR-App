@@ -51,6 +51,34 @@
                         {
                             "xml": "<access origin=\"https://accounts.google.com/*\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"FacebookConnectPlugin\"><param name=\"ios-package\" value=\"FacebookConnectPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<plugin name=\"FacebookConnectPlugin\" value=\"FacebookConnectPlugin\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://m.facebook.com\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://graph.facebook.com\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://api.facebook.com\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://*.fbcdn.net\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://*.akamaihd.net\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -61,11 +89,37 @@
                         {
                             "xml": "<dict><key>NSAllowsArbitraryLoads</key><true /></dict>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<dict><key>NSExceptionDomains</key><dict><key>facebook.com</key><dict><key>NSIncludesSubdomains</key><true /><key>NSThirdPartyExceptionRequiresForwardSecrecy</key><false /></dict><key>fbcdn.net</key><dict><key>NSIncludesSubdomains</key><true /><key>NSThirdPartyExceptionRequiresForwardSecrecy</key><false /></dict><key>akamaihd.net</key><dict><key>NSIncludesSubdomains</key><true /><key>NSThirdPartyExceptionRequiresForwardSecrecy</key><false /></dict></dict></dict>",
+                            "count": 1
                         }
                     ],
                     "CFBundleURLTypes": [
                         {
                             "xml": "<array><dict><key>CFBundleTypeRole</key><string>Editor</string><key>CFBundleURLName</key><string>REVERSED_CLIENT_ID</string><key>CFBundleURLSchemes</key><array><string>675813043375-n37u36c1hdb3o16ss8l5u048u9asi9f9.apps.googleusercontent.com</string></array></dict></array>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<array><dict><key>CFBundleURLSchemes</key><array><string>fb565485373626941</string></array></dict></array>",
+                            "count": 1
+                        }
+                    ],
+                    "FacebookAppID": [
+                        {
+                            "xml": "<string>565485373626941</string>",
+                            "count": 1
+                        }
+                    ],
+                    "FacebookDisplayName": [
+                        {
+                            "xml": "<string>Puzz-R.com</string>",
+                            "count": 1
+                        }
+                    ],
+                    "LSApplicationQueriesSchemes": [
+                        {
+                            "xml": "<array><string>fbapi</string><string>fb-messenger-api</string><string>fbauth2</string><string>fbshareextension</string></array>",
                             "count": 1
                         }
                     ]
@@ -103,6 +157,11 @@
         },
         "cordova-plugin-googleplus": {
             "REVERSED_CLIENT_ID": "675813043375-n37u36c1hdb3o16ss8l5u048u9asi9f9.apps.googleusercontent.com",
+            "PACKAGE_NAME": "com.thepuzzcompany.app"
+        },
+        "cordova-plugin-facebook4": {
+            "APP_ID": "565485373626941",
+            "APP_NAME": "Puzz-R.com",
             "PACKAGE_NAME": "com.thepuzzcompany.app"
         }
     },
@@ -189,6 +248,14 @@
             "clobbers": [
                 "window.plugins.googleplus"
             ]
+        },
+        {
+            "id": "cordova-plugin-facebook4.FacebookConnectPlugin",
+            "file": "plugins/cordova-plugin-facebook4/www/facebook-native.js",
+            "pluginId": "cordova-plugin-facebook4",
+            "clobbers": [
+                "facebookConnectPlugin"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -201,6 +268,7 @@
         "cordova-plugin-dialogs": "1.3.0",
         "cordova-plugin-transport-security": "0.1.2",
         "cordova-plugin-network-information": "1.3.1-dev",
-        "cordova-plugin-googleplus": "5.1.1"
+        "cordova-plugin-googleplus": "5.1.1",
+        "cordova-plugin-facebook4": "1.7.4"
     }
 }

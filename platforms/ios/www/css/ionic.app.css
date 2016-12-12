@@ -9951,10 +9951,21 @@ ion-nav-bar.cart-color * {
   .cart-view .checkout-btn {
     font-weight: 500; }
 
-ion-nav-bar.product-color * {
+    ion-nav-bar.product-color * {
+
+        background-color: #3ba1da !important;
+        background: #3ba1da !important;
+      color: #FFFFFF; }
+ion-nav-bar.product-color * .buttons button::before {
   color: #FFFFFF; }
-  ion-nav-bar.product-color * .buttons button::before {
+
+  ion-nav-bar.game-color * {
+
+      background-color: #3ba1da !important;
+      background: #3ba1da !important;
     color: #FFFFFF; }
+    ion-nav-bar.game-color * .buttons button::before {
+      color: #FFFFFF; }
 
 .product-view {
   background-color: #EEE; }
