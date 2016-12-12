@@ -21,119 +21,6 @@ angular.module('PuzzR.app.controllers', [
 })
 
 
-.controller('ProfileCtrl', function($scope, $stateParams, PostService, $ionicHistory, $state, $ionicScrollDelegate) {
-
-  $scope.$on('$ionicView.afterEnter', function() {
-    $ionicScrollDelegate.$getByHandle('profile-scroll').resize();
-  });
-
-  var userId = $stateParams.userId;
-
-  $scope.myProfile = $scope.loggedUser._id == userId;
-  $scope.posts = [];
-  $scope.likes = [];
-  $scope.user = {};
-
-  PostService.getUserPosts(userId).then(function(data){
-    $scope.posts = data;
-  });
-
-  PostService.getUserDetails(userId).then(function(data){
-    $scope.user = data;
-  });
-
-  PostService.getUserLikes(userId).then(function(data){
-    $scope.likes = data;
-  });
-
-  $scope.getUserLikes = function(userId){
-    //we need to do this in order to prevent the back to change
-    $ionicHistory.currentView($ionicHistory.backView());
-    $ionicHistory.nextViewOptions({ disableAnimate: true });
-
-    $state.go('app.profile.likes', {userId: userId});
-  };
-
-  $scope.getUserPosts = function(userId){
-    //we need to do this in order to prevent the back to change
-    $ionicHistory.currentView($ionicHistory.backView());
-    $ionicHistory.nextViewOptions({ disableAnimate: true });
-
-    $state.go('app.profile.posts', {userId: userId});
-  };
-
-})
-
-// 
-// .controller('ProductCtrl', function($scope, $stateParams, ShopService, $ionicPopup, $ionicLoading) {
-//   var productId = $stateParams.productId;
-//
-//
-//
-//   ShopService.getProduct(productId).then(function(product){
-//     $scope.product = product;
-//   });
-//
-//   // show add to cart popup on button click
-//   $scope.showAddToCartPopup = function(product) {
-//     $scope.data = {};
-//     $scope.data.product = product;
-//     $scope.data.productOption = 1;
-//     $scope.data.productQuantity = 1;
-//
-//     var myPopup = $ionicPopup.show({
-//       cssClass: 'add-to-cart-popup',
-//       templateUrl: 'views/app/shop/partials/add-to-cart-popup.html',
-//       title: 'Add to Cart',
-//       scope: $scope,
-//       buttons: [
-//         { text: '', type: 'close-popup ion-ios-close-outline' },
-//         {
-//           text: 'Add to cart',
-//           onTap: function(e) {
-//             return $scope.data;
-//           }
-//         }
-//       ]
-//     });
-//     myPopup.then(function(res) {
-//       if(res)
-//       {
-//         $ionicLoading.show({ template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Adding to cart</p>', duration: 1000 });
-//         ShopService.addProductToCart(res.product);
-//         console.log('Item added to cart!', res);
-//       }
-//       else {
-//         console.log('Popup closed');
-//       }
-//     });
-//   };
-// })
-
-.controller('ProductCtrl', function($scope, $stateParams, ShopService, $ionicPopup, $ionicLoading) {
-
-  var productId = $stateParams.productId;
-
-  ShopService.getProduct(productId).then(function(product){
-    $scope.product = product;
-
-    console.log(product.post_meta['thumbnail_url']);
-    //imagePuzzle.startGame(product.post_meta['meta-image1'].meta_value, product.post_meta['meta-difficulty'].meta_value);
-
-
-    $('.puzzle-component').puzzle({src:product.post_meta['meta-image1'].meta_value, size:product.post_meta['meta-difficulty'].meta_value, callback: checkWin});
-
-    function checkWin(rivals, dif, moves, time) {
-      console.log(moves + " " + time);
-
-    }
-
-
-  });
-
-})
-
-
 .controller('FeedCtrl', function($scope, PostService) {
   $scope.posts = [];
   $scope.page = 0;
@@ -178,105 +65,6 @@ angular.module('PuzzR.app.controllers', [
 })
 
 
-.controller('CategoriesPuzzleCtrl', function($scope, $stateParams, ShopService, PuzzleService) {
-    var page = 0;
-    var catId = $stateParams.categoryId;
-    var name = $stateParams.name;
-
-    $scope.name = name;
-    $scope.puzzles = [];
-    $scope.fromRefresh = false;
-    $scope.hasEnded = false;
-    $scope.hasData = true;
-
-    console.log('Category Id: ' + catId);
-    console.log('Name: ' + name);
-
-    $scope.loadPuzzlesByCat = function() {
-        page++;
-
-        console.log('Fetching puzzles By Category..');
-        PuzzleService.getPuzzlesByCategory({categoryId: catId, page: page}, function(puzzles) {
-            console.log('items fetched: ' + puzzles.length);
-            console.log(puzzles);
-
-
-
-            if (puzzles.length > 0) {
-                if($scope.fromRefresh) {
-                    $scope.puzzles = puzzles;
-                    $scope.fromRefresh = false;
-                }
-                else {
-                    $scope.puzzles = $scope.puzzles.concat(puzzles);
-                }
-            } else if (puzzles.length == 0) {
-                if (page == 1) {
-                    $scope.hasData = false;
-                }
-                $scope.hasEnded = true;
-            }
-
-            $scope.$broadcast("scroll.infiniteScrollComplete");
-        });
-    };
-
-    $scope.doRefresh = function() {
-
-        page = 0;
-        $scope.hasEnded = false;
-        $scope.fromRefresh = true;
-
-        $scope.loadPuzzlesByCat();
-        $scope.$broadcast('scroll.refreshComplete');
-    };
-})
-
-.controller('ShopCtrl', function($scope, ShopService, PuzzleService) {
-    var page = 0;
-
-    $scope.puzzles = [];
-    $scope.hasEnded = false;
-    $scope.fromRefresh = false;
-    $scope.products = [];
-    $scope.popular_products = [];
-
-    $scope.loadMore = function() {
-        page++;
-        console.log('Fetching more puzzles..');
-        PuzzleService.getPuzzles({page : page},function(puzzles) {
-            console.log('items fetched: ' + puzzles.length);
-            console.log(puzzles);
-
-            if (puzzles.length > 0) {
-                if($scope.fromRefresh) {
-                    $scope.products = puzzles;
-                    $scope.fromRefresh = false;
-                }
-                else {
-                    $scope.products = $scope.products.concat(puzzles);
-                }
-            } else {
-                $scope.hasEnded = true;
-            }
-
-            $scope.$broadcast("scroll.infiniteScrollComplete");
-        });
-    };
-
-    $scope.doRefresh = function() {
-
-        page = 0;
-        $scope.hasEnded = false;
-        $scope.fromRefresh = true;
-
-        $scope.loadMore();
-        $scope.$broadcast('scroll.refreshComplete');
-    };
-
-})
-
-
 .controller('ShoppingCartCtrl', function($scope, ShopService, $ionicActionSheet, _) {
   $scope.products = ShopService.getCartProducts();
 
@@ -300,22 +88,6 @@ angular.module('PuzzR.app.controllers', [
   };
 
 })
-
-.controller('CategoriesCtrl', function($scope, PuzzleService) {
-    $scope.categories = [];
-
-    $scope.loadCategories = function () {
-        console.log('Fetching puzzle categories..');
-
-        PuzzleService.query(function(categories) {
-            $scope.categories = categories;
-            console.log(categories)
-        });
-    };
-
-    $scope.loadCategories();
-})
-
 
 
 .controller('CheckoutCtrl', function($scope) {
@@ -346,8 +118,4 @@ angular.module('PuzzR.app.controllers', [
     $scope.privacy_policy_modal.show();
   };
 
-})
-
-
-
-;
+});
