@@ -3,21 +3,21 @@ angular.module('PuzzR.app.controllers', [
 ])
 
 
-.controller('AppCtrl', function($scope, AuthService) {
+.controller('AppCtrl', function($scope, UserService) {
+  //
+  // //this will represent our logged user
+  // var user = {
+  //   about: "Design Lead of Project Fi. Love adventures, green tea, and the color pink.",
+  //   name: "Brynn Evans",
+  //   picture: "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg",
+  //   _id: 0,
+  //   followers: 345,
+  //   following: 58
+  // };
+  //
+  // //save our logged user on the localStorage
 
-  //this will represent our logged user
-  var user = {
-    about: "Design Lead of Project Fi. Love adventures, green tea, and the color pink.",
-    name: "Brynn Evans",
-    picture: "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg",
-    _id: 0,
-    followers: 345,
-    following: 58
-  };
-
-  //save our logged user on the localStorage
-  AuthService.saveUser(user);
-  $scope.loggedUser = user;
+  $scope.loggedUser = UserService.getUser();
 })
 
 
@@ -94,7 +94,7 @@ angular.module('PuzzR.app.controllers', [
   //$scope.paymentDetails;
 })
 
-.controller('SettingsCtrl', function($scope, $ionicModal) {
+.controller('SettingsCtrl', function($scope, $state, $ionicModal, UserService, $ionicLoading) {
 
   $ionicModal.fromTemplateUrl('views/app/legal/terms-of-service.html', {
     scope: $scope,
@@ -117,5 +117,16 @@ angular.module('PuzzR.app.controllers', [
   $scope.showPrivacyPolicy = function() {
     $scope.privacy_policy_modal.show();
   };
+  $scope.logout = function() {
+
+    $ionicLoading.show();
+    window.plugins.googleplus.logout();
+
+    UserService.logout();
+
+    $ionicLoading.hide();
+    $state.go('facebook-sign-in');
+
+    };
 
 });

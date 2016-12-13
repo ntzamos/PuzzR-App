@@ -5,29 +5,38 @@ angular.module('PuzzR.app.services', ['ngResource'])
 
     var setUser = function(user_data) {
         window.localStorage.starter_google_user = JSON.stringify(user_data);
+        window.localStorage.loggedIn = true;
     };
 
+    var isLoggedIn = function(){
+        return window.localStorage.loggedIn;
+    };
+    var logout = function(){
+        window.localStorage.loggedIn = false;
+    };
     var getUser = function(){
         return JSON.parse(window.localStorage.starter_google_user || '{}');
     };
 
     return {
         getUser: getUser,
+        isLoggedIn: isLoggedIn,
+        logout: logout,
         setUser: setUser
     };
 })
 
 .service('AuthService', function (){
-
-  this.saveUser = function(user){
-    window.localStorage.your_app_name_user = JSON.stringify(user);
-  };
-
-  this.getLoggedUser = function(){
-
-    return (window.localStorage.your_app_name_user) ?
-      JSON.parse(window.localStorage.your_app_name_user) : null;
-  };
+  //
+  // this.saveUser = function(user){
+  //   window.localStorage.your_app_name_user = JSON.stringify(user);
+  // };
+  //
+  // this.getLoggedUser = function(){
+  //
+  //   return (window.localStorage.your_app_name_user) ?
+  //     JSON.parse(window.localStorage.your_app_name_user) : null;
+  // };
 
 })
 
