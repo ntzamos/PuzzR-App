@@ -7,14 +7,26 @@ angular.module('PuzzR.auth.controllers', [
 	// $scope.bgs = ["http://lorempixel.com/640/1136"];
 	$scope.bgs = ["img/welcome-bg.jpeg"];
 
+    $scope.fbLoginSuccess = function (userData) {
+      console.log("UserInfo: ", userData);
+    }
+
+$scope.facebookSignIn = function() {
+    facebookConnectPlugin.login(["public_profile"], $scope.fbLoginSuccess,
+      function loginError (error) {
+        console.error(error)
+      }
+    );
+};
+
   if(UserService.isLoggedIn()==true)
     $state.go('app.shop.home');
 
 
-	$scope.facebookSignIn = function(){
-		console.log("doing facebbok sign in");
-		$state.go('app.shop.home');
-	};
+	// $scope.facebookSignIn = function(){
+	// 	console.log("doing facebbok sign in");
+	// 	$state.go('app.shop.home');
+	// };
 
 	$ionicModal.fromTemplateUrl('views/app/legal/privacy-policy.html', {
     scope: $scope,
