@@ -5,14 +5,16 @@ angular.module('PuzzR.app.services', ['ngResource'])
 
     var setUser = function(user_data) {
         window.localStorage.starter_google_user = JSON.stringify(user_data);
-        window.localStorage.loggedIn = true;
     };
 
+    var login = function(){
+      window.localStorage.loggedIn = true;
+    };
     var isLoggedIn = function(){
-        return window.localStorage.loggedIn;
+      return window.localStorage.loggedIn;
     };
     var logout = function(){
-        window.localStorage.loggedIn = false;
+      window.localStorage.loggedIn = false;
     };
     var getUser = function(){
         return JSON.parse(window.localStorage.starter_google_user || '{}');
@@ -22,6 +24,7 @@ angular.module('PuzzR.app.services', ['ngResource'])
         getUser: getUser,
         isLoggedIn: isLoggedIn,
         logout: logout,
+        login: login,
         setUser: setUser
     };
 })
@@ -184,6 +187,11 @@ function PuzzleService($resource) {
             method: 'GET',
             isArray: true
         },
+        getPuzzlesEnded: {
+            url: 'http://api.puzz-r.com/puzzles/ended/:page',
+            method: 'GET',
+            isArray: true
+        },
         getPuzzleById: {
             url: 'http://api.puzz-r.com/puzzle/:puzzleId',
             method: 'GET'
@@ -192,6 +200,14 @@ function PuzzleService($resource) {
             url: 'http://api.puzz-r.com/puzzles/category/:categoryId/:page',
             method: 'GET',
             isArray: true
+        },
+        postPlay: {
+            url: 'http://api.puzz-r.com/play',
+            method: 'POST',
+            isArray: true,
+            headers: {
+              'Content-Type': 'application/json'
+            }
         }
     });
 }

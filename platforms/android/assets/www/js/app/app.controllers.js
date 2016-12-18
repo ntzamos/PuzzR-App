@@ -120,8 +120,9 @@ angular.module('PuzzR.app.controllers', [
   $scope.logout = function() {
 
     $ionicLoading.show();
+    UserService.logout();
     window.plugins.googleplus.logout();
-
+    facebookConnectPlugin.logout();
     UserService.logout();
 
     $ionicLoading.hide();

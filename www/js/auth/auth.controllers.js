@@ -7,22 +7,39 @@ angular.module('PuzzR.auth.controllers', [
 	// $scope.bgs = ["http://lorempixel.com/640/1136"];
 	$scope.bgs = ["img/welcome-bg.jpeg"];
 
-    $scope.fbLoginSuccess = function (userData) {
-      console.log("UserInfo: ", userData);
-    }
-
-$scope.facebookSignIn = function() {
-    facebookConnectPlugin.login(["public_profile"], $scope.fbLoginSuccess,
-      function loginError (error) {
-        console.error(error)
-      }
-    );
-};
-
-  if(UserService.isLoggedIn()==true)
+  if(UserService.isLoggedIn()=='true')
     $state.go('app.shop.home');
 
 
+    $scope.fbLoginSuccess = function (userData) {
+      facebookConnectPlugin.api('/me?fields=name,email,picture.type(large)', null,
+                 function(user_data) {
+
+                      console.log("UserInfo: ", user_data);
+                      UserService.login();
+
+                      console.log("Isloggedin= " + UserService.isLoggedIn());
+
+                      UserService.setUser({
+                          userId: user_data.userId,
+                          name: user_data.name,
+                          email: user_data.email,
+                          picture: user_data.picture.data.url,
+                          accessToken: user_data.accessToken,
+                          idToken: user_data.idToken
+                      });
+
+                      $state.go('app.shop.home');
+                 });
+    }
+
+    $scope.facebookSignIn = function() {
+        facebookConnectPlugin.login(["public_profile"], $scope.fbLoginSuccess,
+          function loginError (error) {
+            console.error(error)
+          }
+        );
+    };
 	// $scope.facebookSignIn = function(){
 	// 	console.log("doing facebbok sign in");
 	// 	$state.go('app.shop.home');

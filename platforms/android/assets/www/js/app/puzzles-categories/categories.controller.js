@@ -9,8 +9,12 @@ angular.module('puzzle.categories', [
         console.log('Fetching puzzle categories..');
 
         PuzzleService.query(function(categories) {
-            $scope.categories = categories;
-            console.log(categories)
+            for(var i=0;i<categories.length;i++) {
+
+              if(categories[i].count == 0 ) continue;
+              $scope.categories.push(categories[i]);
+            }
+            console.log($scope.categories)
         });
     };
 
