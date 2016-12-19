@@ -1,8 +1,6 @@
-angular.module('puzzles.categorized', [
+angular.module('puzzles.categorized')
 
-])
-
-.controller('CategoriesPuzzleCtrl', function($scope, $stateParams, ShopService, PuzzleService) {
+.controller('CategoriesPuzzleCtrl', function($scope, $stateParams, PuzzleService) {
     var page = 0;
     var catId = $stateParams.categoryId;
     var name = $stateParams.name;

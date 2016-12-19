@@ -1,8 +1,10 @@
-angular.module('puzzles.tab.home', [
+angular
+    .module('puzzles.tab.home')
+    .controller('ShopCtrl', ShopCtrl);
 
-])
+ShopCtrl.$inject = ['$scope', 'PuzzleService'];
 
-.controller('ShopCtrl', function($scope, ShopService, PuzzleService) {
+function ShopCtrl($scope, PuzzleService) {
     var page = 0;
     var pageEnded = 0;
 
@@ -78,4 +80,4 @@ angular.module('puzzles.tab.home', [
         $scope.$broadcast('scroll.refreshComplete');
     };
 
-});
+};

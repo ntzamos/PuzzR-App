@@ -1,15 +1,17 @@
-angular.module('puzzle.categories', [
+angular
+    .module('puzzle.categories')
+    .controller('CategoriesCtrl', CategoriesCtrl);
 
-])
+CategoriesCtrl.$inject = ['$scope', 'PuzzleService'];
 
-.controller('CategoriesCtrl', function($scope, PuzzleService) {
+function CategoriesCtrl($scope, PuzzleService) {
     $scope.categories = [];
 
     $scope.loadCategories = function () {
         console.log('Fetching puzzle categories..');
 
         PuzzleService.query(function(categories) {
-            for(var i=0;i<categories.length;i++) {
+            for(var i = 0; i < categories.length; i++) {
 
               if(categories[i].count == 0 ) continue;
               $scope.categories.push(categories[i]);
@@ -19,4 +21,4 @@ angular.module('puzzle.categories', [
     };
 
     $scope.loadCategories();
-});
+}

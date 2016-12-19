@@ -1,3 +1,4 @@
 angular.module('puzzle.play', [
-    'PuzzR.app.services'
+    'core.puzzle',
+    'core.user'
 ]);
