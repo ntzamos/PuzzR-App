@@ -4,11 +4,8 @@ angular.module('PuzzR.auth.controllers', [
 
 
 .controller('WelcomeCtrl', function($scope, $state, $ionicModal, UserService, $ionicLoading, $ionicActionSheet){
-	// $scope.bgs = ["http://lorempixel.com/640/1136"];
 	$scope.bgs = ["img/welcome-bg.jpeg"];
 
-    console.log("Isloggedin= " + UserService.isLoggedIn());
-      console.log(UserService.getUser());
   if(UserService.isLoggedIn()=='true')
     $state.go('app.shop.home');
 

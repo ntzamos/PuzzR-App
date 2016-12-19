@@ -4,22 +4,25 @@ angular.module('underscore', [])
 });
 
 angular.module('PuzzR', [
-  'ionic',
-  'user.profile',
-  'puzzle.play',
-  'puzzle.categories',
-  'puzzles.categorized',
-  'puzzles.tab.hot',
-  'puzzles.tab.home',
-  'puzzles.tab.all',
-  'PuzzR.common.directives',
-  'PuzzR.app.controllers',
-  'PuzzR.auth.controllers',
-  'PuzzR.app.services',
-  // 'PuzzR.views',
-  'underscore',
-  'angularMoment',
-  'ngIOS9UIWebViewPatch'
+    'ionic',
+    'home-page',
+    'user.profile',
+    'user.settings',
+    'puzzle.play',
+    'puzzle.categories',
+    'puzzles.categorized',
+    'puzzles.tab.ended',
+    'puzzles.tab.home',
+    'puzzles.tab.all',
+    'PuzzR.common.directives',
+    'PuzzR.app.controllers',
+    'PuzzR.auth.controllers',
+    'core',
+    'PuzzR.app.services',
+    // 'PuzzR.views',
+    'underscore',
+    'angularMoment',
+    'ngIOS9UIWebViewPatch'
 ])
 
 

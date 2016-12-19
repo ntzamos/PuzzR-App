@@ -4,9 +4,7 @@ angular.module('PuzzR.app.controllers', [
 
 
 .controller('AppCtrl', function($scope, UserService) {
-
-
-  $scope.loggedUser = UserService.getUser();
+    $scope.loggedUser = UserService.getUser();
 })
 
 
@@ -79,43 +77,4 @@ angular.module('PuzzR.app.controllers', [
 
 
 .controller('CheckoutCtrl', function($scope) {
-  //$scope.paymentDetails;
-})
-
-.controller('SettingsCtrl', function($scope, $state, $ionicModal, UserService, $ionicLoading) {
-
-  $ionicModal.fromTemplateUrl('views/app/legal/terms-of-service.html', {
-    scope: $scope,
-    animation: 'slide-in-up'
-  }).then(function(modal) {
-    $scope.terms_of_service_modal = modal;
-  });
-
-  $ionicModal.fromTemplateUrl('views/app/legal/privacy-policy.html', {
-    scope: $scope,
-    animation: 'slide-in-up'
-  }).then(function(modal) {
-    $scope.privacy_policy_modal = modal;
-  });
-
-  $scope.showTerms = function() {
-    $scope.terms_of_service_modal.show();
-  };
-
-  $scope.showPrivacyPolicy = function() {
-    $scope.privacy_policy_modal.show();
-  };
-  $scope.logout = function() {
-
-    $ionicLoading.show();
-    UserService.logout();
-    window.plugins.googleplus.logout();
-    facebookConnectPlugin.logout();
-    UserService.logout();
-
-    $ionicLoading.hide();
-    $state.go('facebook-sign-in');
-
-    };
-
 });

@@ -169,7 +169,7 @@ angular.module('PuzzR',[
     views: {
       'menuContent': {
         templateUrl: "js/app/puzzle-play/puzzle-play.template.html",
-        controller: 'ProductCtrl'
+        controller: 'PuzzlePlayCtrl'
       }
     }
   })

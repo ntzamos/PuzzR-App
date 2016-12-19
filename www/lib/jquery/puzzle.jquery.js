@@ -337,7 +337,7 @@
 				td = this.end_time - this.start_time;
 
 			return td;
-		},
+		}
 	};
 
 	// INITIALIZE THE PLUGIN

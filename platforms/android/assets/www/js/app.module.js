@@ -15,6 +15,7 @@ angular.module('PuzzR', [
   'PuzzR.common.directives',
   'PuzzR.app.controllers',
   'PuzzR.auth.controllers',
+  'core',
   'PuzzR.app.services',
   // 'PuzzR.views',
   'underscore',

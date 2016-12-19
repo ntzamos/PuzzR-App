@@ -1,7 +1,38 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
-
+.idea
 
 
 .DS_Store
+platforms/android/CordovaLib/build/generated/assets/
+platforms/android/CordovaLib/build/generated/res/
+platforms/android/CordovaLib/build/generated/source/aidl/
+platforms/android/CordovaLib/build/generated/source/apt/
+platforms/android/CordovaLib/build/generated/source/r/
+platforms/android/CordovaLib/build/generated/source/rs/
+platforms/android/CordovaLib/build/intermediates/bundles/debug/aidl/
+platforms/android/CordovaLib/build/intermediates/bundles/debug/assets/
+platforms/android/CordovaLib/build/intermediates/bundles/debug/jni/
+platforms/android/CordovaLib/build/intermediates/bundles/debug/libs/
+platforms/android/CordovaLib/build/intermediates/bundles/debug/res/
+platforms/android/CordovaLib/build/intermediates/bundles/release/aidl/
+platforms/android/CordovaLib/build/intermediates/bundles/release/assets/
+platforms/android/CordovaLib/build/intermediates/bundles/release/jni/
+platforms/android/CordovaLib/build/intermediates/bundles/release/libs/
+platforms/android/CordovaLib/build/intermediates/bundles/release/res/
+platforms/android/CordovaLib/build/intermediates/dependency-cache/
+platforms/android/CordovaLib/build/intermediates/incremental/packageDebugAndroidTest/
+platforms/android/CordovaLib/build/intermediates/incremental/packageDebugResources/aapt-temp/
+platforms/android/CordovaLib/build/intermediates/incremental/packageDebugResources/merged.dir/
+platforms/android/CordovaLib/build/intermediates/incremental/packageReleaseResources/aapt-temp/
+platforms/android/CordovaLib/build/intermediates/incremental/packageReleaseResources/merged.dir/
+platforms/android/CordovaLib/build/intermediates/incremental/processDebugResources/
+platforms/android/CordovaLib/build/intermediates/incremental/processReleaseResources/
+platforms/android/CordovaLib/build/intermediates/jniLibs/
+platforms/android/CordovaLib/build/intermediates/lint/
+platforms/android/CordovaLib/build/intermediates/rs/
+platforms/android/CordovaLib/build/intermediates/shaders/
+platforms/android/CordovaLib/build/intermediates/transforms/
+platforms/android/CordovaLib/build/tmp/
+platforms/android/assets/www/js/app/core/
