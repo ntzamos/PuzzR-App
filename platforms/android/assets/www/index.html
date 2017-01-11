@@ -1,61 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos; *; style-src  &apos;self&apos; &apos;unsafe-inline&apos; *">
-    <title></title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos; *; style-src  &apos;self&apos; &apos;unsafe-inline&apos; *">
+        <title></title>
 
-    <link href="css/ionic.app.css" rel="stylesheet">
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="lib/underscore/underscore-min.js"></script>
-    <script src="lib/moment/moment.js"></script>
-    <script src="lib/angular-moment/angular-moment.js"></script>
-    <script src="lib/angular-ios9-uiwebview-patch/angular-ios9-uiwebview-patch.js"></script>
-    <script src="lib/ionic/js/angular-resource.js"></script>
+        <link href="css/ionic.app.css" rel="stylesheet">
+        <script src="lib/ionic/js/ionic.bundle.js"></script>
+        <script src="lib/ionic.cloud.min.js"></script>
+        <script src="lib/underscore/underscore-min.js"></script>
+        <script src="lib/moment/moment.js"></script>
+        <script src="lib/angular-moment/angular-moment.js"></script>
+        <script src="lib/angular-ios9-uiwebview-patch/angular-ios9-uiwebview-patch.js"></script>
+        <script src="lib/ionic/js/angular-resource.js"></script>
 
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+        <!-- cordova script (this will be a 404 during development) -->
+        <script src="cordova.js"></script>
 
-    <script src="js/app.module.js"></script>
-    <script src="js/app.config.js"></script>
-    <script src="js/common/common.directives.js"></script>
-    <script src="js/auth/auth.controllers.js"></script>
-    <script src="js/app/app.controllers.js"></script>
-    <script src="js/app/app.services.js"></script>
-    <script src="js/app/core/core.module.js"></script>
-    <script src="js/views.js"></script>
 
-    <link href="css/puzzle.css" rel="stylesheet" />
-    <script src="lib/jquery/jquery-2.1.1.min.js"></script>
-    <script src="lib/jquery/jquery-ui.js"></script>
-    <script src="lib/jquery/puzzle.jquery.js"></script>
 
-    <script src="js/app/puzzles-categories/categories.module.js"></script>
-    <script src="js/app/puzzles-categories/categories.controller.js"></script>
+        <script src="js/app.module.js"></script>
+        <script src="js/app.config.js"></script>
+        <script src="js/common/common.directives.js"></script>
+        <script src="js/auth/auth.controllers.js"></script>
+        <script src="js/app/app.controllers.js"></script>
+        <script src="js/app/app.services.js"></script>
+        <script src="js/app/core/core.module.js"></script>
+        <script src="js/views.js"></script>
 
-    <script src="js/app/categorized-puzzles-list/categorized-puzzles-list.module.js"></script>
-    <script src="js/app/categorized-puzzles-list/categorized-puzzles-list.controller.js"></script>
+        <link href="css/puzzle.css" rel="stylesheet">
+        <script src="lib/jquery/jquery-2.1.1.min.js"></script>
+        <script src="lib/jquery/jquery-ui.js"></script>
+        <script src="lib/jquery/puzzle.jquery.js"></script>
 
-    <script src="js/app/puzzles-tab-hot/puzzles-tab-hot.module.js"></script>
-    <script src="js/app/puzzles-tab-all/puzzles-tab-all.module.js"></script>
-    <script src="js/app/puzzles-tab-home/puzzles-tab-home.module.js"></script>
-    <script src="js/app/puzzles-tabs-menu/puzzles-tab-home.controller.js"></script>
+        <script src="js/app/puzzles-categories/categories.module.js"></script>
+        <script src="js/app/puzzles-categories/categories.controller.js"></script>
 
-    <script src="js/app/puzzle-play/puzzle-play.module.js"></script>
-    <script src="js/app/puzzle-play/puzzle-play.controller.js"></script>
+        <script src="js/app/categorized-puzzles-list/categorized-puzzles-list.module.js"></script>
+        <script src="js/app/categorized-puzzles-list/categorized-puzzles-list.controller.js"></script>
 
-    <script src="js/app/user-profile/profile.module.js"></script>
-    <script src="js/app/user-profile/profile.controller.js"></script>
+        <script src="js/app/puzzles-tab-ended/puzzles-tab-ended.module.js"></script>
+        <script src="js/app/puzzles-tab-all/puzzles-tab-all.module.js"></script>
+        <script src="js/app/puzzles-tab-home/puzzles-tab-home.module.js"></script>
+        <script src="js/app/puzzles-tabs-menu/puzzles-tabs-menu.controller.js"></script>
 
-    <script src="js/app/core/puzzle/puzzle.module.js"></script>
-    <script src="js/app/core/puzzle/puzzle.service.js"></script>
+        <script src="js/app/home-page/home-page.module.js"></script>
+        <script src="js/app/home-page/home-page.controller.js"></script>
 
-    <script src="js/app/core/user/user.module.js"></script>
-    <script src="js/app/core/user/user.service.js"></script>
+        <script src="js/app/puzzle-play/puzzle-play.module.js"></script>
+        <script src="js/app/puzzle-play/puzzle-play.controller.js"></script>
 
-  </head>
-  <body ng-app="PuzzR" class="platform-android platform-cordova platform-webview">
-    <ion-nav-view></ion-nav-view>
-  </body>
+        <script src="js/app/user-profile/profile.module.js"></script>
+        <script src="js/app/user-profile/profile.controller.js"></script>
+
+        <script src="js/app/user-profile-settings/user-profile-settings.module.js"></script>
+        <script src="js/app/user-profile-settings/user-profile-settings.controller.js"></script>
+
+        <script src="js/app/core/puzzle/puzzle.module.js"></script>
+        <script src="js/app/core/puzzle/puzzle.service.js"></script>
+
+        <script src="js/app/core/user/user.module.js"></script>
+        <script src="js/app/core/user/user.service.js"></script>
+    </head>
+    <body ng-app="PuzzR" class="platform-android platform-cordova platform-webview">
+        <ion-nav-view></ion-nav-view>
+    </body>
 </html>

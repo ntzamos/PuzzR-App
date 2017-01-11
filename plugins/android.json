@@ -41,6 +41,13 @@
             "APP_ID": "565485373626941",
             "APP_NAME": "Puzz-R.com",
             "PACKAGE_NAME": "com.thepuzzcompany.app"
+        },
+        "com.phonegap.plugins.PushPlugin": {
+            "PACKAGE_NAME": "com.thepuzzcompany.app"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "305777829642",
+            "PACKAGE_NAME": "com.thepuzzcompany.app"
         }
     },
     "dependent_plugins": {}

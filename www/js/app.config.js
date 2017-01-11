@@ -15,7 +15,8 @@ angular.module('PuzzR', [
     'PuzzR.app.services',
     'underscore',
     'angularMoment',
-    'ngIOS9UIWebViewPatch'
+    'ngIOS9UIWebViewPatch',
+    'ionic.cloud'
 ])
 // Enable native scrolls for Android platform only,
 // as you see, we're disabling jsScrolling to achieve this.
@@ -24,6 +25,26 @@ angular.module('PuzzR', [
         $ionicConfigProvider.scrolling.jsScrolling(false);
     }
 })
+.config(function($ionicCloudProvider) {
+  $ionicCloudProvider.init({
+    "core": {
+      "app_id": "4ef8cc53"
+    },
+    "push": {
+      "sender_id": "305777829642",
+      "pluginConfig": {
+        "ios": {
+          "badge": true,
+          "sound": true
+        },
+        "android": {
+          "iconColor": "#343434"
+        }
+      }
+    }
+  });
+})
+
 
 .config(function($stateProvider, $urlRouterProvider) {
 

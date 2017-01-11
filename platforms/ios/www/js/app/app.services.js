@@ -1,33 +1,16 @@
 angular.module('PuzzR.app.services', ['ngResource'])
 
-.service('UserService', function() {
-    // For the purpose of this example I will store user data on ionic local storage but you should save it on a database
-
-    var setUser = function(user_data) {
-        window.localStorage.starter_google_user = JSON.stringify(user_data);
-    };
-
-    var getUser = function(){
-        return JSON.parse(window.localStorage.starter_google_user || '{}');
-    };
-
-    return {
-        getUser: getUser,
-        setUser: setUser
-    };
-})
-
 .service('AuthService', function (){
-
-  this.saveUser = function(user){
-    window.localStorage.your_app_name_user = JSON.stringify(user);
-  };
-
-  this.getLoggedUser = function(){
-
-    return (window.localStorage.your_app_name_user) ?
-      JSON.parse(window.localStorage.your_app_name_user) : null;
-  };
+  //
+  // this.saveUser = function(user){
+  //   window.localStorage.your_app_name_user = JSON.stringify(user);
+  // };
+  //
+  // this.getLoggedUser = function(){
+  //
+  //   return (window.localStorage.your_app_name_user) ?
+  //     JSON.parse(window.localStorage.your_app_name_user) : null;
+  // };
 
 })
 
@@ -163,26 +146,3 @@ angular.module('PuzzR.app.services', ['ngResource'])
   };
 
 })
-
-.factory('PuzzleService', PuzzleService);
-
-PuzzleService.$inject = ['$resource'];
-
-function PuzzleService($resource) {
-    return $resource('http://api.puzz-r.com/categories',{},{
-        getPuzzles: {
-            url: 'http://api.puzz-r.com/puzzles/:page',
-            method: 'GET',
-            isArray: true
-        },
-        getPuzzleById: {
-            url: 'http://api.puzz-r.com/puzzle/:puzzleId',
-            method: 'GET'
-        },
-        getPuzzlesByCategory: {
-            url: 'http://api.puzz-r.com/puzzles/category/:categoryId/:page',
-            method: 'GET',
-            isArray: true
-        }
-    });
-}

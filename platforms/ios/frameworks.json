@@ -2,10 +2,11 @@
     "AudioToolbox.framework": 1,
     "SystemConfiguration.framework": 2,
     "CoreTelephony.framework": 1,
-    "AddressBook.framework": 1,
+    "AddressBook.framework": 2,
     "CoreText.framework": 1,
     "SafariServices.framework": 1,
     "Security.framework": 1,
-    "libz.tbd": 1,
-    "libz.dylib": 1
+    "libz.tbd": 2,
+    "libz.dylib": 1,
+    "libsqlite3.tbd": 1
 }

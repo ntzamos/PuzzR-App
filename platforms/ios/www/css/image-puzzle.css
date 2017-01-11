@@ -41,9 +41,10 @@
 
 #collage #sortable {
     list-style-type: none;
-    display: inline-block;
+    display: block;
     padding: 0;
-    width: 400px;
+    width: 375px;
+    overflow-x: hidden;
 }
 
     #collage #sortable li {

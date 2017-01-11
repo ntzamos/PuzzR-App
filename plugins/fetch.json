@@ -92,5 +92,24 @@
             "APP_ID": "565485373626941",
             "APP_NAME": "Puzz-R.com"
         }
+    },
+    "com.phonegap.plugins.PushPlugin": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phonegap-build/PushPlugin.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "phonegap-plugin-push": {
+        "source": {
+            "type": "registry",
+            "id": "phonegap-plugin-push@1.9.2"
+        },
+        "is_top_level": true,
+        "variables": {
+            "SENDER_ID": "305777829642"
+        }
     }
 }

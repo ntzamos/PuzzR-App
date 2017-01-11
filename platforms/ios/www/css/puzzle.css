@@ -1,0 +1,73 @@
+
+.puzzle-component {
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+}
+.puzzle-component img {
+  max-width:100%;
+}
+.rivals .puzzle-component img {
+  width: auto;
+  height: 320px;
+}
+.win-info, .start-button {
+  position: absolute;
+  top: 0;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  cursor: pointer;
+  z-index: 199;
+  font-size: 1.5em;
+}
+.start-button {top: 30%;}
+.start-button:hover {font-weight: bold;}
+.no-touch {
+  -webkit-touch-callout: none;
+  -ms-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+.game-container {
+  margin: 0 auto;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.tile {
+  position: absolute; }
+  .tile, .tile .tile-inner {
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    transition-property: transform; }
+  .tile.tile-hover {
+    box-shadow: 0 0 5px 2px gold;
+    z-index: 1; }
+  .tile.tile-dropped {
+    z-index: 2; }
+  .tile.tile-changed {
+    z-index: 1; }
+  .tile .tile-inner {
+    background-size: 310px;
+    border-radius: 1px; }
+  .tile.tile-drag {
+    z-index: 2;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none; }
+  .tile.tile-drag > .tile-inner {
+    box-shadow: 2px 2px 5px #222;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1); }

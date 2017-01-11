@@ -19,15 +19,16 @@ angular.module('PuzzR', [
     'PuzzR.auth.controllers',
     'core',
     'PuzzR.app.services',
-    // 'PuzzR.views',
     'underscore',
     'angularMoment',
-    'ngIOS9UIWebViewPatch'
+    'ngIOS9UIWebViewPatch',
+    'ionic.cloud'
 ])
 
 
 .run(function($ionicPlatform, $rootScope, $ionicHistory, $ionicPopup) {
     $ionicPlatform.ready(function() {
+
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard for form inputs)
         if(window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);

@@ -81,6 +81,22 @@ module.exports = [
         "clobbers": [
             "facebookConnectPlugin"
         ]
+    },
+    {
+        "id": "com.phonegap.plugins.PushPlugin.PushNotification",
+        "file": "plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js",
+        "pluginId": "com.phonegap.plugins.PushPlugin",
+        "clobbers": [
+            "PushNotification"
+        ]
+    },
+    {
+        "id": "phonegap-plugin-push.PushNotification",
+        "file": "plugins/phonegap-plugin-push/www/push.js",
+        "pluginId": "phonegap-plugin-push",
+        "clobbers": [
+            "PushNotification"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -96,7 +112,9 @@ module.exports.metadata =
     "cordova-plugin-transport-security": "0.1.2",
     "cordova-plugin-network-information": "1.3.1-dev",
     "cordova-plugin-googleplus": "5.1.1",
-    "cordova-plugin-facebook4": "1.7.4"
+    "cordova-plugin-facebook4": "1.7.4",
+    "com.phonegap.plugins.PushPlugin": "2.5.0",
+    "phonegap-plugin-push": "1.9.2"
 };
 // BOTTOM OF METADATA
 });

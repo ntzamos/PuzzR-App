@@ -4,28 +4,31 @@ angular.module('underscore', [])
 });
 
 angular.module('PuzzR', [
-  'ionic',
-  'user.profile',
-  'puzzle.play',
-  'puzzle.categories',
-  'puzzles.categorized',
-  'puzzles.tab.hot',
-  'puzzles.tab.home',
-  'puzzles.tab.all',
-  'PuzzR.common.directives',
-  'PuzzR.app.controllers',
-  'PuzzR.auth.controllers',
-  'core',
-  'PuzzR.app.services',
-  // 'PuzzR.views',
-  'underscore',
-  'angularMoment',
-  'ngIOS9UIWebViewPatch'
+    'ionic',
+    'home-page',
+    'user.profile',
+    'user.settings',
+    'puzzle.play',
+    'puzzle.categories',
+    'puzzles.categorized',
+    'puzzles.tab.ended',
+    'puzzles.tab.home',
+    'puzzles.tab.all',
+    'PuzzR.common.directives',
+    'PuzzR.app.controllers',
+    'PuzzR.auth.controllers',
+    'core',
+    'PuzzR.app.services',
+    'underscore',
+    'angularMoment',
+    'ngIOS9UIWebViewPatch',
+    'ionic.cloud'
 ])
 
 
 .run(function($ionicPlatform, $rootScope, $ionicHistory, $ionicPopup) {
     $ionicPlatform.ready(function() {
+
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard for form inputs)
         if(window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);

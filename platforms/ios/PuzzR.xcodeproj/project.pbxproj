@@ -48,6 +48,11 @@
 		C7B451741A3D4273898ABC58 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 980971E472574B9B82D40967 /* FBSDKCoreKit.framework */; };
 		0B8C9559DD5F4F97AEE97A0D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F73DF150E0A42F5B2DE3458 /* FBSDKLoginKit.framework */; };
 		B6E88943F4C34D8791CF52AC /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6549FECDEB2C4F328ECE8DA7 /* FBSDKShareKit.framework */; };
+		2314E5DC4CAD4016A07172D2 /* AppDelegate+notification.m in Sources */ = {isa = PBXBuildFile; fileRef = BB51F9CCCE5B4FFC85E7149D /* AppDelegate+notification.m */; };
+		9F18B08FEB324DE4BB4709B2 /* PushPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE5EB2822144B1B68DB598 /* PushPlugin.m */; };
+		4FF8F4DF503A436B81D1A65E /* AppDelegate+notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 695C4F5F32CF49B19F2EBF0A /* AppDelegate+notification.m */; };
+		9AE43886F581443E87258C10 /* PushPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = BB81EAAEA7E6415DA31BA4EB /* PushPlugin.m */; };
+		E6EC51CD96E4427783C8A548 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E57DCB5AFE6847BE91B56D82 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +136,15 @@
 		980971E472574B9B82D40967 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; name = "FBSDKCoreKit.framework"; path = "PuzzR/Plugins/cordova-plugin-facebook4/FBSDKCoreKit.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		0F73DF150E0A42F5B2DE3458 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; name = "FBSDKLoginKit.framework"; path = "PuzzR/Plugins/cordova-plugin-facebook4/FBSDKLoginKit.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		6549FECDEB2C4F328ECE8DA7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; name = "FBSDKShareKit.framework"; path = "PuzzR/Plugins/cordova-plugin-facebook4/FBSDKShareKit.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		BB51F9CCCE5B4FFC85E7149D /* AppDelegate+notification.m */ = {isa = PBXFileReference; name = "AppDelegate+notification.m"; path = "com.phonegap.plugins.PushPlugin/AppDelegate+notification.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		31CE5EB2822144B1B68DB598 /* PushPlugin.m */ = {isa = PBXFileReference; name = "PushPlugin.m"; path = "com.phonegap.plugins.PushPlugin/PushPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		58CF1DED525642648706EAB2 /* AppDelegate+notification.h */ = {isa = PBXFileReference; name = "AppDelegate+notification.h"; path = "com.phonegap.plugins.PushPlugin/AppDelegate+notification.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		986002FFD5694D96B84B7056 /* PushPlugin.h */ = {isa = PBXFileReference; name = "PushPlugin.h"; path = "com.phonegap.plugins.PushPlugin/PushPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		695C4F5F32CF49B19F2EBF0A /* AppDelegate+notification.m */ = {isa = PBXFileReference; name = "AppDelegate+notification.m"; path = "phonegap-plugin-push/AppDelegate+notification.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		BB81EAAEA7E6415DA31BA4EB /* PushPlugin.m */ = {isa = PBXFileReference; name = "PushPlugin.m"; path = "phonegap-plugin-push/PushPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		86F7E4C40CFA4DF6B8D27BE2 /* AppDelegate+notification.h */ = {isa = PBXFileReference; name = "AppDelegate+notification.h"; path = "phonegap-plugin-push/AppDelegate+notification.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		413574A4DE10407AB0E6AD50 /* PushPlugin.h */ = {isa = PBXFileReference; name = "PushPlugin.h"; path = "phonegap-plugin-push/PushPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		E57DCB5AFE6847BE91B56D82 /* libsqlite3.tbd */ = {isa = PBXFileReference; name = "libsqlite3.tbd"; path = "usr/lib/libsqlite3.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +172,7 @@
 				C7B451741A3D4273898ABC58 /* FBSDKCoreKit.framework in Frameworks */,
 				0B8C9559DD5F4F97AEE97A0D /* FBSDKLoginKit.framework in Frameworks */,
 				B6E88943F4C34D8791CF52AC /* FBSDKShareKit.framework in Frameworks */,
+				E6EC51CD96E4427783C8A548 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +264,7 @@
 				980971E472574B9B82D40967 /* FBSDKCoreKit.framework */,
 				0F73DF150E0A42F5B2DE3458 /* FBSDKLoginKit.framework */,
 				6549FECDEB2C4F328ECE8DA7 /* FBSDKShareKit.framework */,
+				E57DCB5AFE6847BE91B56D82 /* libsqlite3.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -296,6 +312,14 @@
 				59428B4DDE6045E6ADB6C5DD /* GooglePlus.h */,
 				9BEF8D8C6E1D4A4CB7029BB4 /* FacebookConnectPlugin.m */,
 				D0767A52F9604396A60BF256 /* FacebookConnectPlugin.h */,
+				BB51F9CCCE5B4FFC85E7149D /* AppDelegate+notification.m */,
+				31CE5EB2822144B1B68DB598 /* PushPlugin.m */,
+				58CF1DED525642648706EAB2 /* AppDelegate+notification.h */,
+				986002FFD5694D96B84B7056 /* PushPlugin.h */,
+				695C4F5F32CF49B19F2EBF0A /* AppDelegate+notification.m */,
+				BB81EAAEA7E6415DA31BA4EB /* PushPlugin.m */,
+				86F7E4C40CFA4DF6B8D27BE2 /* AppDelegate+notification.h */,
+				413574A4DE10407AB0E6AD50 /* PushPlugin.h */,
 			);
 			name = Plugins;
 			path = "PuzzR/Plugins";
@@ -421,6 +445,10 @@
 				331E6BACAC994C2C8D603120 /* CDVReachability.m in Sources */,
 				184442B6AF504A208B8D8B2B /* GooglePlus.m in Sources */,
 				72DACDD2BC6746CD9C2D1DF6 /* FacebookConnectPlugin.m in Sources */,
+				2314E5DC4CAD4016A07172D2 /* AppDelegate+notification.m in Sources */,
+				9F18B08FEB324DE4BB4709B2 /* PushPlugin.m in Sources */,
+				4FF8F4DF503A436B81D1A65E /* AppDelegate+notification.m in Sources */,
+				9AE43886F581443E87258C10 /* PushPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

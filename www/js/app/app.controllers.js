@@ -3,8 +3,51 @@ angular.module('PuzzR.app.controllers', [
 ])
 
 
-.controller('AppCtrl', function($scope, UserService) {
+.controller('AppCtrl', function($scope, UserService, $ionicAuth, $ionicUser, $ionicPush) {
     $scope.loggedUser = UserService.getUser();
+
+    $ionicPush.register().then(function(t) {
+      return $ionicPush.saveToken(t);
+    }).then(function(t) {
+      console.log('Token saved:', t.token);
+    });
+
+    $scope.$on('cloud:push:notification', function(event, data) {
+      var msg = data.message;
+      alert(msg.title + ': ' + msg.text);
+    });
+
+
+    $scope.$on('$cordovaPush:tokenReceived', function(event, data) {
+        console.log("Successfully registered token " + data.token);
+        console.log('Ionic Push: Got token ', data.token, data.platform);
+        $scope.token = data.token;
+    });
+    var details = {'email': UserService.getUser().email, 'password': 'pass123'};
+
+        $ionicAuth.logout();
+    if (!$ionicAuth.isAuthenticated()) {
+      // $ionicUser is authenticated!
+      $ionicAuth.login('basic', details).then(function() {
+        // `$ionicUser` is now registered
+        console.log("Logged!");
+      }, function(err) {
+
+        $ionicAuth.signup(details).then(function() {
+          // `$ionicUser` is now registered
+          console.log("Logged!");
+        }, function(err) {
+          for (var e of err.details) {
+            if (e === 'conflict_email') {
+              alert('Email already exists.');
+            } else {
+              // handle other errors
+            }
+          }
+        });
+      });
+    }
+
 })
 
 
