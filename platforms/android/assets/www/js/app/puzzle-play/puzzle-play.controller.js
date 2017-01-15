@@ -2,9 +2,9 @@ angular
     .module('puzzle.play')
     .controller('PuzzlePlayCtrl', PuzzlePlayCtrl);
 
-PuzzlePlayCtrl.$inject = ['$scope', '$stateParams', 'PuzzleService', 'UserService', '$ionicPopup', '$ionicLoading'];
+PuzzlePlayCtrl.$inject = ['$scope', '$stateParams', 'PuzzleService', '$ionicUser', '$ionicPopup', '$ionicLoading'];
 
-function PuzzlePlayCtrl ($scope, $stateParams, PuzzleService, UserService, $ionicPopup, $ionicLoading) {
+function PuzzlePlayCtrl ($scope, $stateParams, PuzzleService, $ionicUser, $ionicPopup, $ionicLoading) {
 
     var productId = $stateParams.productId;
 
@@ -24,10 +24,9 @@ function PuzzlePlayCtrl ($scope, $stateParams, PuzzleService, UserService, $ioni
         function checkWin(rivals, dif, moves, time) {
             console.log(moves + " " + time);
 
-            var user = UserService.getUser();
+            var userId = $ionicUser.get('puzzrId');
             var info = {
-                // uid : user.userId,
-                uid : 1,
+                uid : userId,
                 moves: moves,
                 time: time
             };

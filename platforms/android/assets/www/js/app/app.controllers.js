@@ -4,13 +4,21 @@ angular.module('PuzzR.app.controllers', [
 
 
 .controller('AppCtrl', function($scope, UserService, $ionicAuth, $ionicUser, $ionicPush) {
-     $scope.loggedUser = $ionicUser;
-    //
-    // $ionicPush.register().then(function(t) {
-    //   return $ionicPush.saveToken(t);
-    // }).then(function(t) {
-    //   console.log('Token saved:', t.token);
-    // });
+    $scope.loggedUser = $ionicUser;
+
+
+    //Push Notifications
+    $ionicPush.register().then(function(t) {
+      return $ionicPush.saveToken(t);
+    }).then(function(t) {
+      console.log('Token saved:', t.token);
+    });
+    $scope.$on('$cordovaPush:tokenReceived', function(event, data) {
+        console.log("Successfully registered token " + data.token);
+        console.log('Ionic Push: Got token ', data.token, data.platform);
+        $scope.token = data.token;
+    });
+
     //
     // $scope.$on('cloud:push:notification', function(event, data) {
     //   var msg = data.message;
@@ -18,11 +26,7 @@ angular.module('PuzzR.app.controllers', [
     // });
     //
     //
-    // $scope.$on('$cordovaPush:tokenReceived', function(event, data) {
-    //     console.log("Successfully registered token " + data.token);
-    //     console.log('Ionic Push: Got token ', data.token, data.platform);
-    //     $scope.token = data.token;
-    // });
+
     // var details = {'email': UserService.getUser().email, 'password': 'pass123'};
     //
     //     $ionicAuth.logout();
