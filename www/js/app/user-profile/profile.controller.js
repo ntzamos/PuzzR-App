@@ -1,6 +1,4 @@
-angular.module('user.profile', [
-
-])
+angular.module('user.profile')
 
 .controller('ProfileCtrl', function($scope, $stateParams, UserService, $ionicHistory, $state, $ionicScrollDelegate) {
 

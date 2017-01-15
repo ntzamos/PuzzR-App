@@ -49,10 +49,10 @@
                 <!-- We need a wrapper with width set for the preload image directive -->
                 <div class="user-image-outer">
                   <pre-img ratio="_1_1" helper-class="rounded-image">
-                    <img class="user-image" ng-src="{{loggedUser.picture}}" spinner-on-load>
+                    <img class="user-image" ng-src="{{loggedUser.social.facebook.data.profile_picture}}" spinner-on-load>
                 	</pre-img>
                 </div>
-                <h2 class="menu-text">{{loggedUser.name}}</h2>
+                <h2 class="menu-text">{{loggedUser.social.facebook.data.full_name}}</h2>
                 <!-- <div class="user-inbox">
                   <i class="menu-icon icon ion-ios-filing"></i>
                   <span class="inbox-unread">13</span>

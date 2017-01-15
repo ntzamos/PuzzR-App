@@ -1,4 +1,5 @@
 angular
     .module('user.settings', [
-        'core.user'
+        'core.user',
+        'ionic.cloud'
     ]);

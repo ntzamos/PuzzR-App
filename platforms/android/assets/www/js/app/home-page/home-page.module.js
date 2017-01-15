@@ -1,4 +1,5 @@
 angular
     .module('home-page', [
-        'core.user'
+        'core.puzzle',
+        'ionic.cloud'
     ]);

@@ -30,6 +30,11 @@ angular.module('PuzzR', [
     "core": {
       "app_id": "4ef8cc53"
     },
+    "auth": {
+      "facebook": {
+        "scope": ["email", "public_profile"]
+      }
+    },
     "push": {
       "sender_id": "305777829642",
       "pluginConfig": {

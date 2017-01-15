@@ -6,6 +6,11 @@ PuzzleService.$inject = ['$resource'];
 
 function PuzzleService($resource) {
     return $resource('http://api.puzz-r.com/categories',{},{
+        checkUser: {
+            url: 'http://api.puzz-r.com/login/:email',
+            method: 'GET',
+            isArray: true
+        },
         getPuzzles: {
             url: 'http://api.puzz-r.com/puzzles/:page',
             method: 'GET',
