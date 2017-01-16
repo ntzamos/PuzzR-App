@@ -37,7 +37,7 @@ angular.module('PuzzR.common.directives', [])
 				}
 			}
 		},
-		templateUrl: 'views/common/multi-bg.html',
+		templateUrl: 'extra/common/multi-bg.html',
 		restrict: 'A',
 		replace: true,
 		transclude: true
@@ -79,7 +79,7 @@ angular.module('PuzzR.common.directives', [])
 				$scope.$broadcast("toggle-type", $scope.show);
 			};
 		},
-		templateUrl: 'views/common/show-hide-password.html',
+		templateUrl: 'extra/common/show-hide-password.html',
 		restrict: 'A',
 		replace: false,
 		transclude: true
@@ -134,7 +134,7 @@ angular.module('PuzzR.common.directives', [])
 				});
 			};
 		},
-		templateUrl: 'views/common/pre-img.html'
+		templateUrl: 'extra/common/pre-img.html'
 	};
 })
 
