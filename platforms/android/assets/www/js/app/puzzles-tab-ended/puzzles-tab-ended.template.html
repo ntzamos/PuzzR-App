@@ -12,7 +12,7 @@
                     <div class="item item-body">
                         <h2 class="card-title">{{product.post_info.post_title}}</h2>
                         <p class="card-description"><b>${{product.post_meta['meta-price'].meta_value}}</b> -
-                           {{product.post_info.post_content | limitTo : 20}}
+                           {{product.post_info.post_content | htmlToPlaintext | limitTo : 25}}
                         </p>
                     </div>
                 </div>

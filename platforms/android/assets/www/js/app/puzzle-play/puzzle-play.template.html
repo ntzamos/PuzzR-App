@@ -1,32 +1,78 @@
+<style>
+    body {
+        cursor: url('http://ionicframework.com/img/finger.png'), auto;
+    }
+
+    .header .col {
+        background-color: #ff9d4c;
+    }
+
+    .col {
+        border: solid 1px grey;
+        border-bottom-style: none;
+        border-right-style: none;
+    }
+
+    .col:last-child {
+        border-right: solid 1px grey;
+    }
+
+    .row:last-child .col {
+        border-bottom: solid 1px grey;
+    }
+</style>
+
 <ion-view view-title="{{product.post_info.post_title}}" class="product-view">
 
-  <!-- <ion-nav-buttons side="secondary">
-    <button class="button button-icon button-clear ion-share"></button>
-  </ion-nav-buttons> -->
-  <ion-content  overflow-scroll="false">
-    <div class="product-card-content">
+    <!--<ion-nav-buttons side="secondary">-->
+        <!--<button class="button button-icon button-clear ion-share"></button>-->
+    <!--</ion-nav-buttons>-->
+    <ion-content  overflow-scroll="false">
+        <div class="product-card-content">
 
-        <!-- <ul id="sortable" class="sortable"></ul> -->
-        <div class="puzzle-component">
-          <pre-img ratio="_1_1" helper-class="main-image">
-          <img ng-src="{{product.post_meta['meta-image1'].meta_value}}" spinner-on-load>
-        </pre-img>
-      </div>
-      <div class="item item-body">
-        <h2 class="product-title">{{product.post_info.post_title}}</h2>
-        <div>
-          <p class="product-like"><i class="icon ion-heart"></i>Like</p>
-          <p class="likes">837</p>
+            <div class="puzzle-component">
+                <pre-img ratio="_1_1" helper-class="main-image">
+                    <img ng-src="{{product.post_meta['meta-image1'].meta_value}}" spinner-on-load>
+                </pre-img>
+            </div>
+            <div class="item item-body">
+                <h2 class="product-title">{{product.post_info.post_title}}</h2>
+                <div>
+                    <p class="product-like"><i class="icon ion-heart"></i>Like</p>
+                    <p class="likes">837</p>
+                </div>
+
+                <!--Active Puzzle-->
+                <p class="product-price" ng-show="!puzzleEnded">
+                    PLAY NOW
+                </p>
+
+                <!--Ended Puzzle-->
+                <p class="product-price" ng-show="puzzleEnded">
+                    <!--TODO: FTIAXTO-->
+                    <a class="button button-small button-dark" href="http://kalo_mou_google.gr">Buy NOW!</a>
+                </p>
+            </div>
+            <div class="item item-body">
+                <p class="product-description" ng-bind-html="product.post_info.post_content"></p>
+            </div>
+            <div class="item item-body">
+
+                <div class="row header">
+                    <div class="col">Username</div>
+                    <div class="col">Moves</div>
+                    <div class="col">Time</div>
+                </div>
+                <div class="row" ng-repeat="d in data | orderBy:'time'">
+                    <div class="col">{{d.username}}</div>
+                    <div class="col">{{d.moves}}</div>
+                    <div class="col">{{d.time}}</div>
+                </div>
+            </div>
         </div>
-        <p class="product-price" >PLAY NOW</p>
-      </div>
-      <div class="item item-body">
-        <p class="product-description">{{product.post_info.post_content}}</p>
-      </div>
-    </div>
-    <div class="item item-divider shop-section-title">
-      <span class="title-copy">Related Products</span>
-    </div>
+        <div class="item item-divider shop-section-title">
+            <span class="title-copy">Related Products</span>
+        </div>
      <!-- <div class="row shop-products-narrow-cards-outer shop-product-cards-scroller">
       <div ng-repeat="related_product in product.related_products" class="col col-50 shop-product-narrow-card" ui-sref="app.product-detail({productId: related_product._id})">
         <div class="list card">
@@ -42,5 +88,5 @@
         </div>
       </div>
     </div> -->
-  </ion-content>
+    </ion-content>
 </ion-view>

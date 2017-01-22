@@ -1,6 +1,6 @@
 angular.module('user.profile')
 
-.controller('ProfileCtrl', function($scope, $stateParams, UserService, $ionicHistory, $state, $ionicScrollDelegate) {
+.controller('ProfileCtrl', function($scope, $stateParams, UserService, $ionicUser, $ionicHistory, $state, $ionicScrollDelegate) {
 
   $scope.$on('$ionicView.afterEnter', function() {
     $ionicScrollDelegate.$getByHandle('profile-scroll').resize();
@@ -8,8 +8,9 @@ angular.module('user.profile')
 
   var userId = $stateParams.userId;
 
-  $scope.myProfile = $scope.loggedUser.userId == userId;
-  $scope.user = UserService.getUser();
+
+  $scope.myProfile = $ionicUser.get('puzzrId') == userId;
+  $scope.user = $ionicUser;
 
 
 });
