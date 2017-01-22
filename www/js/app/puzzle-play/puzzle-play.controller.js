@@ -9,10 +9,23 @@ function PuzzlePlayCtrl ($scope, $stateParams, PuzzleService, $ionicUser, $ionic
     var productId = $stateParams.productId;
     $scope.product = {};
     $scope.puzzleEnded = null;
+    $scope.descriptionGroupShown = false;
+    $scope.resultsGroupShown = false;
 
     console.log('==========================');
     console.log('Puzzle id: ' + productId);
     console.log('==========================');
+
+
+    $scope.toggleDescriptionGroup = function() {
+        $scope.descriptionGroupShown = !$scope.descriptionGroupShown;
+        $scope.resultsGroupShown = false;
+    };
+
+    $scope.toggleResultsGroup = function() {
+        $scope.resultsGroupShown = !$scope.resultsGroupShown;
+        $scope.descriptionGroupShown = false;
+    };
 
 
     $scope.data = [
@@ -26,14 +39,14 @@ function PuzzlePlayCtrl ($scope, $stateParams, PuzzleService, $ionicUser, $ionic
             time: "35sec",
             moves: 12
         }
-    ]
+    ];
 
     function getPuzzle() {
         PuzzleService.getPuzzleById({puzzleId : productId}, function(product) {
 
             $scope.product = product;
 
-              console.log($scope.product);
+            console.log($scope.product);
 
             if(product.post_meta['puzzle-ended'].meta_value == "0") {
                 $scope.puzzleEnded = false;
