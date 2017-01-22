@@ -30,9 +30,10 @@ function PuzzlePlayCtrl ($scope, $stateParams, PuzzleService, $ionicUser, $ionic
 
     function getPuzzle() {
         PuzzleService.getPuzzleById({puzzleId : productId}, function(product) {
+
             $scope.product = product;
 
-            console.log($scope.product);
+              console.log($scope.product);
 
             if(product.post_meta['puzzle-ended'].meta_value == "0") {
                 $scope.puzzleEnded = false;
