@@ -9,7 +9,7 @@
 
     .col {
         border: solid 1px grey;
-        border-bottom-style: none;
+        border-top-style: none;
         border-right-style: none;
     }
 
@@ -17,8 +17,22 @@
         border-right: solid 1px grey;
     }
 
-    .row:last-child .col {
-        border-bottom: solid 1px grey;
+    .row:first-child .col {
+        border-top: solid 1px grey;
+    }
+
+    .list .item.item-accordion {
+        line-height: 38px;
+        padding-top: 0;
+        padding-bottom: 0;
+        transition: 0.09s all linear;
+    }
+    .list .item.item-accordion.ng-hide {
+        line-height: 0px;
+    }
+    .list .item.item-accordion.ng-hide-add,
+    .list .item.item-accordion.ng-hide-remove {
+        display: block !important;
     }
 </style>
 
@@ -54,20 +68,47 @@
                 </p>
             </div>
             <div class="item item-body">
-                <p class="product-description" ng-bind-html="product.post_info.post_content"></p>
-            </div>
-            <div class="item item-body">
 
-                <div class="row header">
-                    <div class="col">Username</div>
-                    <div class="col">Moves</div>
-                    <div class="col">Time</div>
-                </div>
-                <div class="row" ng-repeat="d in data | orderBy:'time'">
-                    <div class="col">{{d.username}}</div>
-                    <div class="col">{{d.moves}}</div>
-                    <div class="col">{{d.time}}</div>
-                </div>
+                <ion-list>
+                    <ion-item class="item-stable"
+                              ng-click="toggleDescriptionGroup()"
+                              ng-class="{active: descriptionGroupShown}">
+                        <i class="icon" ng-class="descriptionGroupShown ? 'ion-minus' : 'ion-plus'"></i>
+                        &nbsp;
+                        Puzzle Description
+                    </ion-item>
+
+                    <div class="item-accordion"
+                        ng-show="descriptionGroupShown">
+                        <p class="product-description" ng-bind-html="product.post_info.post_content"></p>
+                        <br>
+                    </div>
+
+                    <ion-item class="item-stable"
+                              ng-click="toggleResultsGroup()"
+                              ng-class="{active: resultsGroupShown}">
+                        <i class="icon" ng-class="resultsGroupShown ? 'ion-minus' : 'ion-plus'"></i>
+                        &nbsp;
+                        Puzzle Results
+                    </ion-item>
+
+                    <br>
+                    <div class="item-accordion" ng-show="resultsGroupShown">
+                        <div class="row header">
+                            <div class="col">Username</div>
+                            <div class="col">Moves</div>
+                            <div class="col">Time</div>
+                        </div>
+                        <div class="row" ng-repeat="d in data | orderBy:'time'">
+                            <div class="col">{{d.username}}</div>
+                            <div class="col">{{d.moves}}</div>
+                            <div class="col">{{d.time}}</div>
+                        </div>
+                        <br>
+                    </div>
+                    <br>
+                    <br>
+                </ion-list>
             </div>
         </div>
         <div class="item item-divider shop-section-title">

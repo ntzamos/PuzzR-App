@@ -9,31 +9,87 @@ function PuzzlePlayCtrl ($scope, $stateParams, PuzzleService, $ionicUser, $ionic
     var productId = $stateParams.productId;
     $scope.product = {};
     $scope.puzzleEnded = null;
+    $scope.descriptionGroupShown = false;
+    $scope.resultsGroupShown = false;
 
     console.log('==========================');
     console.log('Puzzle id: ' + productId);
     console.log('==========================');
 
 
+    $scope.toggleDescriptionGroup = function() {
+        $scope.descriptionGroupShown = !$scope.descriptionGroupShown;
+        $scope.resultsGroupShown = false;
+    };
+
+    $scope.toggleResultsGroup = function() {
+        $scope.resultsGroupShown = !$scope.resultsGroupShown;
+        $scope.descriptionGroupShown = false;
+    };
+
+
     $scope.data = [
-        {
-            username: "nzamy",
-            time: "55sec",
-            moves: 10
-        },
+      {
+          username: "nzamy",
+          time: "55 sec",
+          moves: 10
+      },
+          {
+              username: "nzamy",
+              time: "55 sec",
+              moves: 10
+          },
+              {
+                  username: "nzamy",
+                  time: "55 sec",
+                  moves: 10
+              },{
+                  username: "nzamy",
+                  time: "55 sec",
+                  moves: 10
+              },
+                  {
+                      username: "nzamy",
+                      time: "55 sec",
+                      moves: 10
+                  },
+                      {
+                          username: "nzamy",
+                          time: "55 sec",
+                          moves: 10
+                      },{
+                          username: "nzamy",
+                          time: "55 sec",
+                          moves: 10
+                      },
+                          {
+                              username: "nzamy",
+                              time: "55 sec",
+                              moves: 10
+                          },
+                              {
+                                  username: "nzamy",
+                                  time: "55 sec",
+                                  moves: 10
+                              },
+                    {
+                        username: "nzamy",
+                        time: "55 sec",
+                        moves: 10
+                    },
         {
             username: "agg",
-            time: "35sec",
+            time: "35 sec",
             moves: 12
         }
-    ]
+    ];
 
     function getPuzzle() {
         PuzzleService.getPuzzleById({puzzleId : productId}, function(product) {
 
             $scope.product = product;
 
-              console.log($scope.product);
+            console.log($scope.product);
 
             if(product.post_meta['puzzle-ended'].meta_value == "0") {
                 $scope.puzzleEnded = false;

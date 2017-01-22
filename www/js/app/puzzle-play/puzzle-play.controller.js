@@ -29,14 +29,57 @@ function PuzzlePlayCtrl ($scope, $stateParams, PuzzleService, $ionicUser, $ionic
 
 
     $scope.data = [
-        {
-            username: "nzamy",
-            time: "55sec",
-            moves: 10
-        },
+      {
+          username: "nzamy",
+          time: "55 sec",
+          moves: 10
+      },
+          {
+              username: "nzamy",
+              time: "55 sec",
+              moves: 10
+          },
+              {
+                  username: "nzamy",
+                  time: "55 sec",
+                  moves: 10
+              },{
+                  username: "nzamy",
+                  time: "55 sec",
+                  moves: 10
+              },
+                  {
+                      username: "nzamy",
+                      time: "55 sec",
+                      moves: 10
+                  },
+                      {
+                          username: "nzamy",
+                          time: "55 sec",
+                          moves: 10
+                      },{
+                          username: "nzamy",
+                          time: "55 sec",
+                          moves: 10
+                      },
+                          {
+                              username: "nzamy",
+                              time: "55 sec",
+                              moves: 10
+                          },
+                              {
+                                  username: "nzamy",
+                                  time: "55 sec",
+                                  moves: 10
+                              },
+                    {
+                        username: "nzamy",
+                        time: "55 sec",
+                        moves: 10
+                    },
         {
             username: "agg",
-            time: "35sec",
+            time: "35 sec",
             moves: 12
         }
     ];
