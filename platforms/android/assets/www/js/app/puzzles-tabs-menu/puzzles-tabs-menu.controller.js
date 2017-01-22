@@ -1,7 +1,12 @@
 angular
     .module('puzzles.tab.home')
-    .controller('PuzzlesMenuController', PuzzlesMenuController);
-
+    .controller('PuzzlesMenuController', PuzzlesMenuController)
+    .filter('htmlToPlaintext', function() {
+        return function(text) {
+          return  text ? String(text).replace(/<[^>]+>/gm, '') : '';
+        };
+      }
+    );
 PuzzlesMenuController.$inject = ['$scope', 'PuzzleService'];
 
 function PuzzlesMenuController($scope, PuzzleService) {

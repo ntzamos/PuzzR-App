@@ -9551,26 +9551,36 @@ ion-spinner.spinner-on-load {
   font-size: 30px;
   color: #6f6f6f; }
 
-ion-nav-bar.profile-color * {
-  color: #FFFFFF; }
+
+  ion-nav-bar.profile-color ion-header-bar {
+      background-color: #5acdea !important;
+      background: #5acdea !important;
+      border: none !important;
+      background-size: 0px !important; }
+
+  ion-nav-bar.profile-color * {
+      color: #FFFFFF;
+  }
   ion-nav-bar.profile-color * .buttons button::before {
-    color: #FFFFFF; }
+      color: #FFFFFF;
+  }
+
 
 .profile-view {
-  background-color: #FF4C4C;
-  background-image: -webkit-linear-gradient(top, #FF4C4C 0%, #FF4C4C 50%, #FFFFFF 50%, #FFFFFF 100%);
-  background-image: linear-gradient(to bottom, #FF4C4C 0%, #FF4C4C 50%, #FFFFFF 50%, #FFFFFF 100%); }
+  background-color: #9c4f18;
+  background-image: -webkit-linear-gradient(to bottom, #9c4f18 0%, #ea7a38 20%, #FFFFFF 20%, #FFFFFF 100%);
+  background-image: linear-gradient(to bottom, #9c4f18 0%, #ea7a38 20%, #FFFFFF 20%, #FFFFFF 100%); }
   .profile-view.own-profile {
-    background-color: #3ba1da;
-    background-image: -webkit-linear-gradient(top, #3ba1da 0%, #3ba1da 50%, #FFFFFF 50%, #FFFFFF 100%);
-    background-image: linear-gradient(to bottom, #3ba1da 0%, #3ba1da 50%, #FFFFFF 50%, #FFFFFF 100%); }
+    background-color: #9c4f18;
+    background-image: -webkit-linear-gradient(to bottom, #9c4f18 0%, #ea7a38 20%, #FFFFFF 20%, #FFFFFF 100%);
+    background-image: linear-gradient(to bottom, #9c4f18 0%, #ea7a38 20%, #FFFFFF 20%, #FFFFFF 100%); }
     .profile-view.own-profile .user-interactions .split-actions .button.activated, .profile-view.own-profile .user-interactions .split-actions .button.highlighted {
       background-color: #3ba1da;
       border-color: rgba(71, 183, 183, 0.7); }
     .profile-view.own-profile .user-interactions .user-interaction .user-interaction-tab.active {
       color: #3ba1da; }
   .profile-view .profile-data {
-    height: 35vh;
+    height: 13vh;
     padding: 0px;
     padding-bottom: 5px; }
     .profile-view .profile-data > .col {
@@ -9583,7 +9593,7 @@ ion-nav-bar.profile-color * {
       padding-bottom: 25px;
       text-align: center; }
     .profile-view .profile-slides .user-data .user-image-outer {
-      width: 30vw;
+      width: 10vw;
       display: inline-block; }
     .profile-view .profile-slides .user-data .user-image {
       width: 100%;

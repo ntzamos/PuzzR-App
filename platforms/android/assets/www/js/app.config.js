@@ -11,7 +11,6 @@ angular.module('PuzzR', [
     'puzzles.tab.all',
     'PuzzR.common.directives',
     'PuzzR.app.controllers',
-    'PuzzR.auth.controllers',
     'PuzzR.app.services',
     'underscore',
     'angularMoment',
@@ -62,17 +61,6 @@ angular.module('PuzzR', [
         templateUrl: "js/app/side-menu/side-menu.template.html",
         controller: 'AppCtrl'
     })
-
-    .state('app.feed', {
-        url: "/feed",
-        views: {
-            'menuContent': {
-                templateUrl: "views/app/feed.html",
-                controller: "FeedCtrl"
-            }
-        }
-    })
-
     .state('app.profile', {
         abstract: true,
         url: '/profile/:userId',
@@ -83,7 +71,6 @@ angular.module('PuzzR', [
             }
         }
     })
-
     .state('app.profile.posts', {
         url: '/posts',
         views: {
@@ -92,7 +79,6 @@ angular.module('PuzzR', [
             }
         }
     })
-
     .state('app.profile.likes', {
         url: '/likes',
         views: {
@@ -101,7 +87,6 @@ angular.module('PuzzR', [
             }
         }
     })
-
     .state('app.settings', {
         url: "/settings",
         views: {
@@ -111,7 +96,6 @@ angular.module('PuzzR', [
             }
         }
     })
-
     .state('app.shop', {
         url: "/puzzles-menu",
         abstract: true,
@@ -121,7 +105,6 @@ angular.module('PuzzR', [
             }
         }
     })
-
     .state('app.shop.home', {
         url: "/",
         views: {
@@ -131,7 +114,6 @@ angular.module('PuzzR', [
             }
         }
     })
-
     .state('app.shop.popular', {
         url: "/popular",
         views: {
@@ -141,7 +123,6 @@ angular.module('PuzzR', [
             }
         }
     })
-
     .state('app.shop.sale', {
         url: "/sale",
         views: {
@@ -151,17 +132,6 @@ angular.module('PuzzR', [
             }
         }
     })
-
-    .state('app.cart', {
-        url: "/cart",
-        views: {
-            'menuContent': {
-                templateUrl: "views/app/shop/cart.html",
-                controller: 'ShoppingCartCtrl'
-            }
-        }
-    })
-
     .state('app.categories', {
         url: "/categories",
         views: {
@@ -171,27 +141,6 @@ angular.module('PuzzR', [
             }
         }
     })
-
-    .state('app.shipping-address', {
-        url: "/shipping-address",
-        views: {
-            'menuContent': {
-                templateUrl: "views/app/shop/shipping-address.html",
-                controller: "CheckoutCtrl"
-            }
-        }
-    })
-
-    .state('app.checkout', {
-        url: "/checkout",
-        views: {
-            'menuContent': {
-                templateUrl: "views/app/shop/checkout.html",
-                controller: "CheckoutCtrl"
-            }
-        }
-    })
-
     .state('app.product-detail', {
         cache: false,
         url: "/product/:productId",
@@ -202,7 +151,6 @@ angular.module('PuzzR', [
             }
         }
     })
-
     .state('app.categories-puzzle', {
         url: "/categories/:categoryId",
         params: {name: null},
@@ -213,31 +161,12 @@ angular.module('PuzzR', [
             }
         }
     })
-
-    //AUTH ROUTES
     .state('home-page', {
         url: "/home-page",
         templateUrl: "js/app/home-page/home-page.template.html",
         controller: 'HomePageController'
-    })
-
-    .state('dont-have-facebook', {
-        url: "/dont-have-facebook",
-        templateUrl: "views/auth/dont-have-facebook.html",
-        controller: 'WelcomeCtrl'
-    })
-
-    .state('create-account', {
-        url: "/create-account",
-        templateUrl: "views/auth/create-account.html",
-        controller: 'CreateAccountCtrl'
-    })
-
-    .state('welcome-back', {
-        url: "/welcome-back",
-        templateUrl: "views/auth/welcome-back.html",
-        controller: 'WelcomeBackCtrl'
     });
+
 
     $urlRouterProvider.otherwise('/home-page');
 });
