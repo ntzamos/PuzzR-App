@@ -2,9 +2,9 @@ angular
     .module('puzzle.play')
     .controller('PuzzlePlayCtrl', PuzzlePlayCtrl);
 
-PuzzlePlayCtrl.$inject = ['$scope', '$stateParams', 'PuzzleService', '$ionicUser', '$ionicPopup', '$ionicLoading'];
+PuzzlePlayCtrl.$inject = ['$scope', '$stateParams','$timeout', 'PuzzleService', '$ionicUser', '$ionicPopup', '$ionicLoading'];
 
-function PuzzlePlayCtrl ($scope, $stateParams, PuzzleService, $ionicUser, $ionicPopup, $ionicLoading) {
+function PuzzlePlayCtrl ($scope, $stateParams, $timeout, PuzzleService, $ionicUser, $ionicPopup, $ionicLoading) {
 
     var productId = $stateParams.productId;
     $scope.product = {};
@@ -15,7 +15,6 @@ function PuzzlePlayCtrl ($scope, $stateParams, PuzzleService, $ionicUser, $ionic
     console.log('==========================');
     console.log('Puzzle id: ' + productId);
     console.log('==========================');
-
 
     $scope.toggleDescriptionGroup = function() {
         $scope.descriptionGroupShown = !$scope.descriptionGroupShown;
@@ -34,49 +33,6 @@ function PuzzlePlayCtrl ($scope, $stateParams, PuzzleService, $ionicUser, $ionic
           time: "55 sec",
           moves: 10
       },
-          {
-              username: "nzamy",
-              time: "55 sec",
-              moves: 10
-          },
-              {
-                  username: "nzamy",
-                  time: "55 sec",
-                  moves: 10
-              },{
-                  username: "nzamy",
-                  time: "55 sec",
-                  moves: 10
-              },
-                  {
-                      username: "nzamy",
-                      time: "55 sec",
-                      moves: 10
-                  },
-                      {
-                          username: "nzamy",
-                          time: "55 sec",
-                          moves: 10
-                      },{
-                          username: "nzamy",
-                          time: "55 sec",
-                          moves: 10
-                      },
-                          {
-                              username: "nzamy",
-                              time: "55 sec",
-                              moves: 10
-                          },
-                              {
-                                  username: "nzamy",
-                                  time: "55 sec",
-                                  moves: 10
-                              },
-                    {
-                        username: "nzamy",
-                        time: "55 sec",
-                        moves: 10
-                    },
         {
             username: "agg",
             time: "35 sec",
@@ -88,6 +44,17 @@ function PuzzlePlayCtrl ($scope, $stateParams, PuzzleService, $ionicUser, $ionic
         PuzzleService.getPuzzleById({puzzleId : productId}, function(product) {
 
             $scope.product = product;
+            $scope.endsin = 10;
+
+            $scope.onTimeout = function(){
+                $scope.endsin--;
+                mytimeout = $timeout($scope.onTimeout,1000);
+            }
+            var mytimeout = $timeout($scope.onTimeout,1000);
+
+            $scope.goToLink = function (url) {
+              window.open(product.post_meta['meta-link'].meta_value, '_system', 'location=yes');
+            }
 
             console.log($scope.product);
 

@@ -51,21 +51,20 @@
             </div>
             <div class="item item-body">
                 <h2 class="product-title">{{product.post_info.post_title}}</h2>
-                <div>
-                    <p class="product-like"><i class="icon ion-heart"></i>Like</p>
-                    <p class="likes">837</p>
+
+                <div ng-show="!puzzleEnded">
+                    <p class="product-like">Ends in: {{endsin}}</p>
                 </div>
 
-                <!--Active Puzzle-->
-                <p class="product-price" ng-show="!puzzleEnded">
-                    PLAY NOW
-                </p>
+                <div ng-show="puzzleEnded">
+                    <p class="product-like">Item Ended</p>
+                </div>
 
-                <!--Ended Puzzle-->
-                <p class="product-price" ng-show="puzzleEnded">
-                    <!--TODO: FTIAXTO-->
-                    <a class="button button-small button-dark" href="http://kalo_mou_google.gr">Buy NOW!</a>
-                </p>
+                <a href="#" ng-click="goToLink()">
+                  <p class="product-price" >
+                      Buy NOW
+                  </p>
+                </a>
             </div>
             <div class="item item-body">
 
@@ -73,9 +72,8 @@
                     <ion-item class="item-stable"
                               ng-click="toggleDescriptionGroup()"
                               ng-class="{active: descriptionGroupShown}">
-                        <i class="icon" ng-class="descriptionGroupShown ? 'ion-minus' : 'ion-plus'"></i>
-                        &nbsp;
                         Puzzle Description
+                        <i class="icon" style="float:right" ng-class="descriptionGroupShown ? 'ion-minus' : 'ion-plus'"></i>
                     </ion-item>
 
                     <div class="item-accordion"
@@ -87,9 +85,8 @@
                     <ion-item class="item-stable"
                               ng-click="toggleResultsGroup()"
                               ng-class="{active: resultsGroupShown}">
-                        <i class="icon" ng-class="resultsGroupShown ? 'ion-minus' : 'ion-plus'"></i>
-                        &nbsp;
                         Puzzle Results
+                        <i class="icon" style="float:right" ng-class="resultsGroupShown ? 'ion-minus' : 'ion-plus'"></i>
                     </ion-item>
 
                     <br>
@@ -114,7 +111,7 @@
         <div class="item item-divider shop-section-title">
             <span class="title-copy">Related Products</span>
         </div>
-     <!-- <div class="row shop-products-narrow-cards-outer shop-product-cards-scroller">
+     <div class="row shop-products-narrow-cards-outer shop-product-cards-scroller">
       <div ng-repeat="related_product in product.related_products" class="col col-50 shop-product-narrow-card" ui-sref="app.product-detail({productId: related_product._id})">
         <div class="list card">
           <div class="item item-image">
@@ -128,6 +125,6 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
     </ion-content>
 </ion-view>
